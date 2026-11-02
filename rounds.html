@@ -102,6 +102,10 @@ line.leader{stroke:var(--navy);stroke-width:2}
 .marker:focus-visible{outline:none}
 .marker:focus-visible circle{stroke:var(--focus);stroke-width:5}
 .pin{fill:var(--maroon);stroke:#fff;stroke-width:2}
+.pointer-shape{fill:#fff;stroke:var(--navy);stroke-width:2.5;stroke-linejoin:round;filter:drop-shadow(0 3px 4px rgba(0,0,0,.35))}
+.pointer-inner{animation:arrive .45s cubic-bezier(.2,.7,.2,1) both, tap .8s ease .5s 2}
+@keyframes arrive{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes tap{0%,100%{transform:translateY(0)}50%{transform:translateY(14px)}}
 
 .panel{display:flex;flex-direction:column;gap:16px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-rest);padding:20px}
@@ -255,7 +259,14 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
   </aside>
 </main>
 
-<footer><span id="byline">Dr. Sharilyn Rennie</span></footer>
+<footer>
+  <span id="byline">Dr. Sharilyn Rennie</span>
+  <span class="row" style="margin-top:10px">
+    <label for="setPick" style="margin:0;font-size:13px">Set</label>
+    <select id="setPick" style="width:auto;margin:0;padding:6px 10px"></select>
+    <button class="btn ghost sm" id="authorToggle" type="button">Author mode</button>
+  </span>
+</footer>
 
 <script id="defaultSet" type="application/json">
 {
@@ -375,8 +386,11 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 
 /* ---------- Load set ---------- */
 const params = new URLSearchParams(location.search);
-const setName = params.get("set") || "larynx-anterior";
-const AUTHOR = params.get("author") === "1";
+const hashP = new URLSearchParams(location.hash.replace(/^#/,""));
+let savedPick={}; try{ savedPick=JSON.parse(sessionStorage.getItem("rounds:pick"))||{}; }catch(e){}
+const setName = params.get("set") || hashP.get("set") || savedPick.set || "larynx-anterior";
+const AUTHOR = params.get("author") === "1" || hashP.get("author") === "1" || savedPick.author === true;
+const KNOWN_SETS = [["larynx-anterior","Larynx, anterior view"],["larynx-posterior","Larynx, posterior and superior views"],["bronchial-tree","Larynx with the bronchial tree"]];
 let SET = null;
 
 async function loadSet(){
@@ -450,6 +464,18 @@ async function startRec(){
 }
 function stopRec(){ if(recorder && recorder.state!=="inactive") recorder.stop(); }
 function playBlob(blob){ new Audio(URL.createObjectURL(blob)).play(); }
+/* Save a file: through the claude.ai viewer when the page runs there, otherwise a normal browser download */
+async function saveFile(filename, data){
+  try{
+    if(window.claude && typeof window.claude.use==="function"){
+      const dl = await window.claude.use("downloads");
+      if(dl){ await dl.save({filename, data}); return "saved"; }
+    }
+  }catch(e){ if(e && e.code==="declined") return "declined"; }
+  const blob = data instanceof Blob ? data : new Blob([data]);
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=filename; document.body.appendChild(a); a.click(); a.remove();
+  return "saved";
+}
 function recControl(key, label, onChange){
   const wrap=document.createElement("span"); wrap.className="row"; wrap.style.marginTop="0";
   const rec=document.createElement("button"); rec.type="button"; rec.className="icon-btn rec"; rec.setAttribute("aria-pressed","false"); rec.setAttribute("aria-label","Record "+label); rec.title="Record";
@@ -480,8 +506,8 @@ async function downloadClips(prefix, keysFilter){
   Object.keys(studentClips).forEach(k=>{ if(keysFilter && !keysFilter(k)) return; const ext=studentClips[k].type.startsWith("audio/mp4")?"m4a":"webm"; const parts=k.split("|"); const fname = parts[0]==="author" ? parts[1]+"-"+parts[2] : parts.join("-"); zip.file(fname+"."+ext, studentClips[k]); n++; });
   if(!n){ setStatus("No recordings yet.","miss"); return; }
   const blob=await zip.generateAsync({type:"blob"});
-  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=prefix+"-"+SET.id+".zip"; document.body.appendChild(a); a.click(); a.remove();
-  setStatus(n+" recording"+(n===1?"":"s")+" downloaded.","ok");
+  const r=await saveFile(prefix+"-"+SET.id+".zip", blob);
+  setStatus(r==="declined"?"Download cancelled.":n+" recording"+(n===1?"":"s")+" downloaded.", r==="declined"?"miss":"ok");
 }
 
 /* ---------- Speech in: recognition ---------- */
@@ -610,10 +636,22 @@ function round0(){
   $("replayBtn").addEventListener("click",()=>{ if(tourIdx>=0) sayCaption(SET.structures[tourIdx]); });
   $("doneTour").addEventListener("click",()=>{ unlock(0); startRound(1); });
 }
+/* Pointer that slides in from the marker and taps the structure. SET.pointer: "hand" (default) or "arrow". */
+const HAND="M0,0 C-7,0 -7,8 -7,8 L-7,34 L-15,25 C-21,20 -27,28 -21,34 L-6,52 C-3,57 4,59 11,59 L21,59 C29,59 33,53 33,45 L33,31 C33,25 24,25 24,31 L24,29 C24,23 15,23 15,29 L15,27 C15,21 7,21 7,27 L7,8 C7,0 0,0 0,0 Z";
+const ARROW="M0,0 L-14,18 L-6,18 L-6,46 L6,46 L6,18 L14,18 Z";
+function drawPointer(s){
+  svg.querySelectorAll(".pointer").forEach(p=>p.remove());
+  const vx=s.label[0]-s.anchor[0], vy=s.label[1]-s.anchor[1];
+  const ang=Math.atan2(-vx,vy)*180/Math.PI;
+  const f=frame(); const k=1.5*Math.max(0.8, f.width/1000);
+  const g=el("g",{class:"pointer","aria-hidden":"true",transform:"translate("+s.anchor[0]+","+s.anchor[1]+") rotate("+ang.toFixed(1)+") scale("+k.toFixed(2)+")"});
+  const inner=el("g",{class:"pointer-inner"},g);
+  el("path",{d:SET.pointer==="arrow"?ARROW:HAND,class:"pointer-shape"},inner);
+}
 function showTour(i){
   tourIdx=i; const s=SET.structures[i];
   if(s.frame!==frameId) setFrame(s.frame,true);
-  afterFrameChange();
+  afterFrameChange(); drawPointer(s);
   $("tourName").textContent=(i+1)+". "+s.name; $("tourCap").textContent=s.caption;
   sayCaption(s);
 }
@@ -870,6 +908,10 @@ async function init(){
   $("soundBtn").addEventListener("click",e=>{ soundOn=!soundOn; e.currentTarget.setAttribute("aria-pressed",String(soundOn)); e.currentTarget.setAttribute("aria-label",soundOn?"Sound on. Press to turn sound off":"Sound off. Press to turn sound on"); try{localStorage.setItem("rounds:sound",soundOn?"1":"0");}catch(x){} if(!soundOn&&window.speechSynthesis) speechSynthesis.cancel(); });
   $("kbdBtn").addEventListener("click",e=>{ kbdMode=!kbdMode; e.currentTarget.setAttribute("aria-pressed",String(kbdMode)); e.currentTarget.setAttribute("aria-label",kbdMode?"Keyboard mode on. Press to hide keyboard targets":"Keyboard mode off. Press to show keyboard targets"); stage.classList.toggle("kbd",kbdMode); });
   $("resetBtn").addEventListener("click",()=>{ progress={unlocked:1,completed:[]}; saveProgress(); try{localStorage.removeItem(LS_KEY()+":teach");}catch(x){} startRound(0); setStatus("Progress cleared.",""); });
+  const pick=$("setPick"); KNOWN_SETS.forEach(([id,lab])=>{ const o=document.createElement("option"); o.value=id; o.textContent=lab; if(id===SET.id) o.selected=true; pick.appendChild(o); });
+  pick.addEventListener("change",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:pick.value,author:AUTHOR})); }catch(e){} location.reload(); });
+  $("authorToggle").textContent = AUTHOR ? "Back to student view" : "Author mode";
+  $("authorToggle").addEventListener("click",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:SET.id,author:!AUTHOR})); }catch(e){} location.reload(); });
   film();
   if(AUTHOR){ authorMode(); return; }
   renderNav(); startRound(0);
@@ -884,13 +926,14 @@ function authorMode(){
   let sel=0, drag=null;
   function S(){ return SET.structures[sel]; }
   function exportSet(){ return JSON.parse(JSON.stringify(SET)); }
+  function moveStructure(s,dx,dy){ s.polygons.forEach(poly=>poly.forEach(q=>{ q[0]+=dx; q[1]+=dy; })); s.anchor=[s.anchor[0]+dx,s.anchor[1]+dy]; }
   function render(){
     clearSvg();
     inFrame().forEach(s=>{
       const i=SET.structures.indexOf(s); const isSel=i===sel;
       s.polygons.forEach((poly,pi)=>{
         const p=el("polygon",{points:pts(poly),class:"zone"+(isSel?" sel":"")});
-        p.addEventListener("mousedown",e=>{ e.stopPropagation(); sel=i; render(); list(); });
+        p.addEventListener("mousedown",e=>{ e.stopPropagation(); if(sel!==i){ sel=i; render(); list(); return; } drag={type:"body",pi,last:svgPoint(e)}; });
         if(isSel) poly.forEach((q,k)=>{ const c=el("circle",{cx:q[0],cy:q[1],r:7,class:"vtx"}); c.addEventListener("mousedown",e=>{ e.stopPropagation(); drag={type:"v",pi,k}; }); c.addEventListener("dblclick",e=>{ e.stopPropagation(); if(poly.length>3){ poly.splice(k,1); render(); } }); });
       });
       el("line",{x1:s.label[0],y1:s.label[1],x2:s.anchor[0],y2:s.anchor[1],class:"leader",opacity:isSel?1:.35});
@@ -901,14 +944,20 @@ function authorMode(){
     $("json").textContent=JSON.stringify(exportSet(),null,1);
   }
   afterFrameChange=render;
-  svg.addEventListener("mousemove",e=>{ if(!drag) return; const s=S(); const f=frame(); const pt=svgPoint(e).map((v,i)=>Math.round(Math.max(0,Math.min(i?f.height:f.width,v)))); if(drag.type==="v") s.polygons[drag.pi][drag.k]=pt; else if(drag.type==="a") s.anchor=pt; else s.label=pt; render(); });
-  window.addEventListener("mouseup",()=>drag=null);
-  svg.addEventListener("click",e=>{ if(drag) return; const s=S(); if(s.frame!==frameId) return; const pt=svgPoint(e).map(v=>Math.round(v)); let best=[0,0],bd=1e12; s.polygons.forEach((poly,pi)=>{ for(let i=0;i<poly.length;i++){ const a=poly[i],b=poly[(i+1)%poly.length]; const d=distSeg(pt,a,b); if(d<bd){bd=d;best=[pi,i];} } }); s.polygons[best[0]].splice(best[1]+1,0,pt); render(); });
+  let moved=false;
+  svg.addEventListener("mousemove",e=>{ if(!drag) return; moved=true; const s=S(); const f=frame(); const raw=svgPoint(e); const pt=raw.map((v,i)=>Math.round(Math.max(0,Math.min(i?f.height:f.width,v))));
+    if(drag.type==="v") s.polygons[drag.pi][drag.k]=pt;
+    else if(drag.type==="a") s.anchor=pt;
+    else if(drag.type==="l") s.label=pt;
+    else if(drag.type==="body"){ const dx=Math.round(raw[0]-drag.last[0]), dy=Math.round(raw[1]-drag.last[1]); s.polygons[drag.pi].forEach(q=>{ q[0]+=dx; q[1]+=dy; }); drag.last=raw; }
+    render(); });
+  window.addEventListener("mouseup",()=>{ drag=null; setTimeout(()=>moved=false,0); });
+  svg.addEventListener("click",e=>{ if(drag||moved) return; const s=S(); if(s.frame!==frameId) return; const pt=svgPoint(e).map(v=>Math.round(v)); let best=[0,0],bd=1e12; s.polygons.forEach((poly,pi)=>{ for(let i=0;i<poly.length;i++){ const a=poly[i],b=poly[(i+1)%poly.length]; const d=distSeg(pt,a,b); if(d<bd){bd=d;best=[pi,i];} } }); s.polygons[best[0]].splice(best[1]+1,0,pt); render(); });
   function distSeg(p,a,b){ const dx=b[0]-a[0],dy=b[1]-a[1]; const t=Math.max(0,Math.min(1,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/(dx*dx+dy*dy||1))); return Math.hypot(p[0]-a[0]-t*dx,p[1]-a[1]-t*dy); }
   body.innerHTML='<div class="author-list" id="alist"></div>'
     +'<div id="edit"></div>'
     +'<div class="row"><button class="btn ghost sm" id="addPoly">Add a second zone</button><button class="btn ghost sm" id="addStruct">Add a structure</button><button class="btn ghost sm" id="moveFrame">Move to other view</button></div>'
-    +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Recordings</h3><p class="small">Say the prompt the way you say it in lab. Name clip: "Point to the carina." Caption clip: the name and what is special about it. Clue clips: read the clue.</p><div id="recs"></div>'
+    +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Recordings</h3><p class="small">Say the prompt the way you say it in lab. Name clip: "Point to the carina." Caption clip: the name and what is special about it. Clue clips: read the clue.</p><div id="micNote" class="small" style="color:var(--miss);font-weight:600"></div><div id="recs"></div>'
     +'<div class="row"><button class="btn" id="dlClips">Download all clips</button></div>'
     +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Set file</h3><div class="row"><button class="btn" id="copyJson">Copy JSON</button><button class="btn ghost" id="dlJson">Download JSON</button></div><pre id="json"></pre>';
   function list(){
@@ -930,7 +979,15 @@ function authorMode(){
   $("moveFrame").addEventListener("click",()=>{ if(SET.frames.length<2) return; const s=S(); const i=SET.frames.findIndex(f=>f.id===s.frame); s.frame=SET.frames[(i+1)%SET.frames.length].id; setFrame(s.frame,true); render(); list(); });
   $("dlClips").addEventListener("click",()=>downloadClips("clips", k=>k.startsWith("author|")));
   $("copyJson").addEventListener("click",()=>navigator.clipboard.writeText(JSON.stringify(exportSet(),null,2)).then(()=>setStatus("JSON copied. Paste it over sets/"+SET.id+".json","ok")));
-  $("dlJson").addEventListener("click",()=>{ const b=new Blob([JSON.stringify(exportSet(),null,2)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=SET.id+".json"; a.click(); });
+  $("dlJson").addEventListener("click",async()=>{ const r=await saveFile(SET.id+".json", JSON.stringify(exportSet(),null,2)); setStatus(r==="declined"?"Download cancelled.":"Set file downloaded. Put it in sets/ to replace "+SET.id+".json", r==="declined"?"miss":"ok"); });
+  /* Nudge the selected structure with the arrow keys (Shift for 10 px). Moves every zone, the pin, and the number together. */
+  document.addEventListener("keydown",e=>{
+    if(!/^Arrow/.test(e.key) || /INPUT|TEXTAREA/.test(document.activeElement.tagName)) return;
+    e.preventDefault(); const d=e.shiftKey?10:1; const dx=e.key==="ArrowLeft"?-d:e.key==="ArrowRight"?d:0, dy=e.key==="ArrowUp"?-d:e.key==="ArrowDown"?d:0;
+    moveStructure(S(),dx,dy); render();
+  });
+  if(!REC_MIME){ $("micNote").textContent = "Recording is not available in this viewer: the microphone is blocked here. Open rounds.html from the zip on your Mac (double-click it), or from GitHub Pages, and the red Record buttons will appear."; }
+  else if(navigator.permissions && navigator.permissions.query){ navigator.permissions.query({name:"microphone"}).then(st=>{ if(st.state==="denied") $("micNote").textContent="The browser has blocked the microphone for this page. Allow it in the address bar, then reload."; }).catch(()=>{}); }
   list(); render();
 }
 
