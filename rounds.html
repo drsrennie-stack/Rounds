@@ -201,6 +201,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
   .rounds-nav{grid-template-columns:repeat(3,1fr)}
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none !important;animation:none !important} }
+.factrow{border:1px solid #d9dde3;border-radius:10px;padding:10px 12px;margin:8px 0}.factrow label{margin-top:6px}
 </style>
 </head>
 <body>
@@ -216,7 +217,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 <div id="gateErr" class="err" aria-live="polite"></div>
 </form>
 <script>(function(){var KEY="rounds:instructor",OK="medic",g=document.getElementById("gate");try{if(localStorage.getItem(KEY)===OK){g.classList.add("hide");return;}}catch(e){}
-document.getElementById("gateForm").addEventListener("submit",function(e){e.preventDefault();var v=document.getElementById("gatePw").value.trim().toLowerCase();if(v===OK){try{localStorage.setItem(KEY,OK);}catch(x){}g.classList.add("hide");}else{document.getElementById("gateErr").textContent="That is not the password.";}});
+document.getElementById("gateForm").addEventListener("submit",function(e){e.preventDefault();var v=document.getElementById("gatePw").value.trim().toLowerCase();if(v===OK){try{localStorage.setItem(KEY,OK);}catch(x){}g.classList.add("hide");location.reload();}else{document.getElementById("gateErr").textContent="That is not the password.";}});
 setTimeout(function(){if(!g.classList.contains("hide"))document.getElementById("gatePw").focus();},50);})();</script>
 </div>
 
@@ -309,6 +310,16 @@ setTimeout(function(){if(!g.classList.contains("hide"))document.getElementById("
         <button class="btn sm" id="weakFind" type="button" disabled>Drill: find them</button>
         <button class="btn sm ghost" id="weakName" type="button" disabled>Drill: name them</button>
         <button class="btn sm ghost" id="weakClear" type="button">Clear</button>
+      </div>
+    </div>
+
+    <div class="card hide" id="instrCard">
+      <div class="eyebrow" style="color:var(--maroon)">Instructor</div>
+      <h2 style="font-size:18px">Edit this <span>set</span></h2>
+      <p class="small">Move pins and numbers, reshape the click zones, rename structures, add or remove them, and edit clues. Your changes download as the set file; upload it to the repo to make them live.</p>
+      <div class="row">
+        <button class="btn sm" id="instrEdit" type="button">Edit this set</button>
+        <a class="btn sm ghost" id="instrBooth" href="record.html" target="_top">Recording studio</a>
       </div>
     </div>
 
@@ -426,6 +437,10 @@ async function findAny(base, key){
   audioCache[key] = found || false; return audioCache[key];
 }
 /* Play a list of items in order. Each item: {s, kind, text} for a structure clip, or {phrase, text} for a common one. Missing clips fall back to the computer voice for that item. */
+/* Keep the output device open while sound is on. Bluetooth headsets and some Macs power the output down between clips and swallow the first half second of the next one; a silent, continuous tone stops that. */
+let warmCtx=null;
+function keepWarm(){ if(warmCtx) { if(warmCtx.state==="suspended") warmCtx.resume().catch(()=>{}); return; } try{ const C=window.AudioContext||window.webkitAudioContext; if(!C) return; warmCtx=new C(); const o=warmCtx.createOscillator(); const g=warmCtx.createGain(); g.gain.value=0.0003; o.frequency.value=40; o.connect(g); g.connect(warmCtx.destination); o.start(); }catch(e){} }
+document.addEventListener("pointerdown",keepWarm,{once:false}); document.addEventListener("keydown",keepWarm);
 let seqToken=0, curAudio=null;
 async function playSeq(items){
   if(!soundOn) return; const my=++seqToken;
@@ -436,7 +451,7 @@ async function playSeq(items){
     let a = it.phrase ? await findAny(commonBase(it.phrase), "common|"+it.phrase) : await findAny(audioBase(it.s,it.kind), it.s.id+"|"+it.kind);
     if(!a && !it.phrase && (it.kind==="say"||it.kind==="name")) a = await findAny("audio/library/"+it.s.id+"-"+it.kind, "library|"+it.s.id+"|"+it.kind);
     if(my!==seqToken) return;
-    if(a){ try{ a.currentTime=0; curAudio=a; await a.play(); await new Promise(res=>{ a.onended=res; a.onerror=res; a.onpause=res; }); if(curAudio===a) curAudio=null; lastAudioNote="Played your clip: "+(it.phrase||it.s.name+" ("+it.kind+")."); continue; }catch(e){ lastAudioNote="Playback blocked: "+(e&&e.message||e); } }
+    if(a){ try{ if(a.readyState<3){ a.preload="auto"; a.load(); await new Promise(res=>{ const t=setTimeout(res,1500); a.oncanplaythrough=()=>{ clearTimeout(t); res(); }; a.onerror=()=>{ clearTimeout(t); res(); }; }); } a.currentTime=0; curAudio=a; await a.play(); await new Promise(res=>{ a.onended=res; a.onerror=res; a.onpause=res; }); if(curAudio===a) curAudio=null; lastAudioNote="Played your clip: "+(it.phrase||it.s.name+" ("+it.kind+")."); continue; }catch(e){ lastAudioNote="Playback blocked: "+(e&&e.message||e); } }
     else lastAudioNote="No clip for "+(it.phrase||it.s.name+" ("+it.kind+")")+"; used the computer voice.";
     await speakWait(it.text);
   }
@@ -945,6 +960,8 @@ async function init(){
   const pick=$("setPick"); KNOWN_SETS.forEach(([id,lab])=>{ const o=document.createElement("option"); o.value=id; o.textContent=lab; if(id===SET.id) o.selected=true; pick.appendChild(o); });
   pick.addEventListener("change",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:pick.value,author:AUTHOR})); }catch(e){} location.reload(); });
   $("authorToggle").textContent = AUTHOR ? "Back to student view" : "Author mode";
+  let instr=false; try{ instr=localStorage.getItem("rounds:instructor")==="medic"; }catch(e){}
+  if(instr){ $("instrCard").classList.remove("hide"); $("instrEdit").textContent = AUTHOR ? "Back to student view" : "Edit this set"; $("instrEdit").addEventListener("click",()=>$("authorToggle").click()); $("instrBooth").href="record.html?set="+encodeURIComponent(SET.id); }
   $("authorToggle").addEventListener("click",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:SET.id,author:!AUTHOR})); }catch(e){} location.reload(); });
   film();
   if(AUTHOR){ authorMode(); return; }
@@ -1016,6 +1033,8 @@ function authorMode(){
   body.innerHTML='<div class="author-list" id="alist"></div>'
     +'<div id="edit"></div>'
     +'<div class="row"><button class="btn ghost sm" id="addPoly">Add a second zone</button><button class="btn ghost sm" id="addStruct">Add a structure</button><button class="btn ghost sm" id="moveFrame">Move to other view</button></div>'
+    +'<div class="row"><button class="btn ghost sm" id="dropPoly">Remove last zone</button><button class="btn ghost sm" id="upStruct">Move up</button><button class="btn ghost sm" id="downStruct">Move down</button><button class="btn ghost sm" id="delStruct" style="color:var(--miss);border-color:var(--miss)">Delete structure</button></div>'
+    +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Clues for this structure</h3><p class="small">Round 4 reads the question, the student clicks the structure, then types the answer. List every answer you will accept, separated by commas.</p><div id="facts"></div><div class="row"><button class="btn ghost sm" id="addFact">Add a clue</button></div>'
     +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Recordings for this structure</h3><p class="small">Each slot shows the exact words to say. Answers to clues are shown as text and need no recording.</p><div id="micNote" class="small" style="color:var(--miss);font-weight:600"></div><div id="recs"></div>'
     +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Common phrases (record once, used by every set)</h3><div id="commonRecs"></div>'
     +'<div class="row"><button class="btn" id="dlClips">Download all clips</button></div>'
@@ -1030,6 +1049,12 @@ function authorMode(){
     $("eAl").addEventListener("input",e=>{ s.aliases=e.target.value.split(",").map(x=>x.trim()).filter(Boolean); render(); });
     $("eSay").addEventListener("input",e=>{ s.say=e.target.value.trim(); if(!s.say) delete s.say; render(); });
     $("eCap").addEventListener("input",e=>{ s.caption=e.target.value; render(); });
+    const F=$("facts"); F.innerHTML="";
+    (s.facts||[]).forEach((f,i)=>{ const d=document.createElement("div"); d.className="factrow"; d.innerHTML='<label for="fq'+i+'">Question '+(i+1)+'</label><input type="text" id="fq'+i+'"><label for="fa'+i+'">Accepted answers</label><input type="text" id="fa'+i+'"><button type="button" class="btn ghost sm" id="fx'+i+'">Remove this clue</button>'; F.appendChild(d);
+      $("fq"+i).value=f.q; $("fa"+i).value=(f.a||[]).join(", ");
+      $("fq"+i).addEventListener("input",e=>{ f.q=e.target.value; render(); });
+      $("fa"+i).addEventListener("input",e=>{ f.a=e.target.value.split(",").map(x=>x.trim()).filter(Boolean); render(); });
+      $("fx"+i).addEventListener("click",()=>{ s.facts.splice(i,1); render(); list(); }); });
     const R=$("recs"); R.innerHTML="";
     const kinds=[["say","Name only",s.name],["name","Find it prompt","Point to the "+s.name.toLowerCase()+"."]].concat(s.facts.map((f,i)=>["clue"+(i+1),"Clue "+(i+1),f.q]));
     kinds.forEach(([k,lab,line])=>{ const row=document.createElement("div"); row.className="recrow"; const t=document.createElement("span"); t.innerHTML='<span class="k">'+lab+'</span><br><strong>Say: </strong>'+line; const h=document.createElement("span"); h.className="has"; h.textContent=studentClips["author|"+s.id+"|"+k]?"Recorded":""; row.append(t,h,recControl("author|"+s.id+"|"+k, lab, ()=>list())); R.appendChild(row); });
@@ -1038,6 +1063,11 @@ function authorMode(){
   }
   $("addPoly").addEventListener("click",()=>{ const s=S(); if(s.frame!==frameId) setFrame(s.frame,true); const f=frame(); const cx=Math.round(f.width/2),cy=Math.round(f.height/2); s.polygons.push([[cx-40,cy-40],[cx+40,cy-40],[cx+40,cy+40],[cx-40,cy+40]]); render(); });
   $("addStruct").addEventListener("click",()=>{ const f=frame(); const cx=Math.round(f.width/2),cy=Math.round(f.height/2); const id="new-"+Date.now().toString(36); SET.structures.push({id,name:"New structure",aliases:[],frame:frameId,caption:"",polygons:[[[cx-40,cy-40],[cx+40,cy-40],[cx+40,cy+40],[cx-40,cy+40]]],anchor:[cx+40,cy],label:[Math.min(f.width-40,cx+200),cy],facts:[]}); sel=SET.structures.length-1; render(); list(); });
+  $("addFact").addEventListener("click",()=>{ const s=S(); s.facts=s.facts||[]; s.facts.push({q:"",a:[]}); render(); list(); setTimeout(()=>{ const q=$("fq"+(s.facts.length-1)); if(q) q.focus(); },0); });
+  $("dropPoly").addEventListener("click",()=>{ const s=S(); if(s.polygons.length>1){ s.polygons.pop(); render(); } else setStatus("A structure needs at least one zone.","miss"); });
+  $("upStruct").addEventListener("click",()=>{ if(sel>0){ const a=SET.structures; [a[sel-1],a[sel]]=[a[sel],a[sel-1]]; sel--; render(); list(); } });
+  $("downStruct").addEventListener("click",()=>{ const a=SET.structures; if(sel<a.length-1){ [a[sel+1],a[sel]]=[a[sel],a[sel+1]]; sel++; render(); list(); } });
+  $("delStruct").addEventListener("click",()=>{ const s=S(); if(SET.structures.length<2){ setStatus("A set needs at least one structure.","miss"); return; } if(!confirm("Delete "+s.name+" from this set?")) return; SET.structures.splice(sel,1); sel=Math.max(0,sel-1); render(); list(); setStatus("Deleted. Download the JSON to keep this change.","ok"); });
   $("moveFrame").addEventListener("click",()=>{ if(SET.frames.length<2) return; const s=S(); const i=SET.frames.findIndex(f=>f.id===s.frame); s.frame=SET.frames[(i+1)%SET.frames.length].id; setFrame(s.frame,true); render(); list(); });
   $("dlClips").addEventListener("click",()=>downloadClips("clips", k=>k.startsWith("author|")));
   $("copyJson").addEventListener("click",()=>navigator.clipboard.writeText(JSON.stringify(exportSet(),null,2)).then(()=>setStatus("JSON copied. Paste it over sets/"+SET.id+".json","ok")));
