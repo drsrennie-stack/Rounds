@@ -241,7 +241,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 
 <header class="band">
   <div class="wrap">
-    <div class="eyebrow" id="eyebrow">BIO 004 · Human Anatomy · MedMasters Collaborative</div>
+    <div class="eyebrow" id="eyebrow">BIO 004 · Human Anatomy</div>
     <h1><a href="index.html" target="_top" style="color:inherit;text-decoration:none">Rounds</a>: <span id="setTitle"></span></h1>
     <p class="sub">Six rounds, same structures every time. A clean pass with no misses unlocks the next round.</p>
     <div class="meta">
@@ -898,7 +898,7 @@ function film(){
   $("skipFilm").onclick=end;
   if(reduce||seen||AUTHOR||params.get("intro")!=="1"){ f.classList.add("done"); return; }
   $("filmEb").textContent=(SET.course||"")+" Human Anatomy";
-  $("filmEb2").textContent=(SET.course||"")+" Human Anatomy · MedMasters Collaborative";
+  $("filmEb2").textContent=(SET.course||"")+" Human Anatomy";
   $("filmTitle").textContent=SET.title; $("filmNum").textContent=String(SET.structures.length).padStart(2,"0");
   const m=$("s3"); const imgs=SET.frames.map(fr=>fr.image); while(imgs.length<3) imgs.push(imgs[imgs.length-1]);
   imgs.slice(0,6).forEach(src=>{ const fig=document.createElement("figure"); const im=document.createElement("img"); im.src=src; im.alt=""; fig.appendChild(im); m.appendChild(fig); });
@@ -921,7 +921,7 @@ async function init(){
   loadProgress(); await clipLoadAll();
   $("setTitle").textContent=SET.title; $("pillCount").textContent=SET.structures.length+" structures";
   $("pillFrames").textContent=SET.frames.length>1?SET.frames.length+" views":"1 view";
-  if(SET.course) $("eyebrow").textContent=SET.course+" · Human Anatomy · MedMasters Collaborative";
+  if(SET.course) $("eyebrow").textContent=SET.course+" · Human Anatomy";
   document.title="Rounds: "+SET.title;
   setFrame(SET.frames[0].id,true); renderFrameTabs();
   $("soundBtn").setAttribute("aria-pressed",String(soundOn));
