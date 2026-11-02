@@ -177,7 +177,6 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none !important;animation:none !important} }
 .gated #film,.gated main,.gated header,.gated nav,.gated footer{visibility:hidden}
-.dot{display:inline-block;width:.17em;height:.17em;border-radius:50%;background:#8B2E2E;margin-left:.08em;vertical-align:baseline;transform:translateY(-.02em)}
 </style>
 </head>
 <body>
@@ -386,7 +385,8 @@ async function playSeq(items){
   window.speechSynthesis && speechSynthesis.cancel();
   for(const it of items){
     if(my!==seqToken) return;
-    const a = it.phrase ? await findAny(commonBase(it.phrase), "common|"+it.phrase) : await findAny(audioBase(it.s,it.kind), it.s.id+"|"+it.kind);
+    let a = it.phrase ? await findAny(commonBase(it.phrase), "common|"+it.phrase) : await findAny(audioBase(it.s,it.kind), it.s.id+"|"+it.kind);
+    if(!a && !it.phrase && (it.kind==="say"||it.kind==="name")) a = await findAny("audio/library/"+it.s.id+"-"+it.kind, "library|"+it.s.id+"|"+it.kind);
     if(my!==seqToken) return;
     if(a){ try{ a.currentTime=0; await a.play(); await new Promise(res=>{ a.onended=res; a.onerror=res; }); lastAudioNote="Played your clip: "+(it.phrase||it.s.name+" ("+it.kind+")."); continue; }catch(e){ lastAudioNote="Playback blocked: "+(e&&e.message||e); } }
     else lastAudioNote="No clip for "+(it.phrase||it.s.name+" ("+it.kind+")")+"; used the computer voice.";
