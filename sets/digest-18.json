@@ -1,0 +1,225 @@
+{
+ "id": "digest-18",
+ "title": "Small intestine and mesentery, transverse colon lifted (cadaver)",
+ "course": "BIO 004",
+ "group": "Digestive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/digest-18.jpg",
+   "width": 1311,
+   "height": 853
+  }
+ ],
+ "structures": [
+  {
+   "id": "transverse-colon",
+   "name": "Transverse colon",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      737,
+      283
+     ],
+     [
+      732,
+      303
+     ],
+     [
+      718,
+      317
+     ],
+     [
+      698,
+      322
+     ],
+     [
+      678,
+      317
+     ],
+     [
+      664,
+      303
+     ],
+     [
+      659,
+      283
+     ],
+     [
+      664,
+      263
+     ],
+     [
+      678,
+      249
+     ],
+     [
+      698,
+      244
+     ],
+     [
+      718,
+      249
+     ],
+     [
+      732,
+      263
+     ]
+    ]
+   ],
+   "anchor": [
+    698,
+    283
+   ],
+   "label": [
+    396,
+    226
+   ],
+   "facts": []
+  },
+  {
+   "id": "mesentery",
+   "name": "Mesentery",
+   "aliases": [
+    "mesentery of the small intestine",
+    "mesentery proper",
+    "small intestine mesentery"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      853,
+      527
+     ],
+     [
+      848,
+      547
+     ],
+     [
+      834,
+      561
+     ],
+     [
+      814,
+      566
+     ],
+     [
+      794,
+      561
+     ],
+     [
+      780,
+      547
+     ],
+     [
+      775,
+      527
+     ],
+     [
+      780,
+      507
+     ],
+     [
+      794,
+      493
+     ],
+     [
+      814,
+      488
+     ],
+     [
+      834,
+      493
+     ],
+     [
+      848,
+      507
+     ]
+    ]
+   ],
+   "anchor": [
+    814,
+    527
+   ],
+   "label": [
+    371,
+    566
+   ],
+   "facts": []
+  },
+  {
+   "id": "small-intestine",
+   "name": "Small intestine",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      870,
+      605
+     ],
+     [
+      865,
+      625
+     ],
+     [
+      851,
+      639
+     ],
+     [
+      831,
+      644
+     ],
+     [
+      811,
+      639
+     ],
+     [
+      797,
+      625
+     ],
+     [
+      792,
+      605
+     ],
+     [
+      797,
+      585
+     ],
+     [
+      811,
+      571
+     ],
+     [
+      831,
+      566
+     ],
+     [
+      851,
+      571
+     ],
+     [
+      865,
+      585
+     ]
+    ]
+   ],
+   "anchor": [
+    831,
+    605
+   ],
+   "label": [
+    371,
+    749
+   ],
+   "facts": []
+  }
+ ]
+}

@@ -1,0 +1,374 @@
+{
+ "id": "digest-16",
+ "title": "Duodenum, four parts (cadaver)",
+ "course": "BIO 004",
+ "group": "Digestive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/digest-16.jpg",
+   "width": 2418,
+   "height": 748
+  }
+ ],
+ "structures": [
+  {
+   "id": "jejunum",
+   "name": "Jejunum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1375,
+      422
+     ],
+     [
+      1365,
+      458
+     ],
+     [
+      1338,
+      485
+     ],
+     [
+      1302,
+      495
+     ],
+     [
+      1266,
+      485
+     ],
+     [
+      1239,
+      458
+     ],
+     [
+      1229,
+      422
+     ],
+     [
+      1239,
+      386
+     ],
+     [
+      1266,
+      359
+     ],
+     [
+      1302,
+      349
+     ],
+     [
+      1338,
+      359
+     ],
+     [
+      1365,
+      386
+     ]
+    ]
+   ],
+   "anchor": [
+    1302,
+    422
+   ],
+   "label": [
+    1607,
+    466
+   ],
+   "facts": []
+  },
+  {
+   "id": "superior-part-of-the-duodenum",
+   "name": "Superior part of the duodenum",
+   "aliases": [
+    "superior duodenum",
+    "first part of the duodenum",
+    "1st part of the duodenum"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      978,
+      299
+     ],
+     [
+      968,
+      335
+     ],
+     [
+      941,
+      362
+     ],
+     [
+      905,
+      372
+     ],
+     [
+      869,
+      362
+     ],
+     [
+      842,
+      335
+     ],
+     [
+      832,
+      299
+     ],
+     [
+      842,
+      263
+     ],
+     [
+      869,
+      236
+     ],
+     [
+      905,
+      226
+     ],
+     [
+      941,
+      236
+     ],
+     [
+      968,
+      263
+     ]
+    ]
+   ],
+   "anchor": [
+    905,
+    299
+   ],
+   "label": [
+    743,
+    706
+   ],
+   "facts": []
+  },
+  {
+   "id": "descending-part-of-the-duodenum",
+   "name": "Descending part of the duodenum",
+   "aliases": [
+    "descending duodenum",
+    "second part of the duodenum",
+    "2nd part of the duodenum"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1000,
+      426
+     ],
+     [
+      990,
+      462
+     ],
+     [
+      963,
+      489
+     ],
+     [
+      927,
+      499
+     ],
+     [
+      891,
+      489
+     ],
+     [
+      864,
+      462
+     ],
+     [
+      854,
+      426
+     ],
+     [
+      864,
+      390
+     ],
+     [
+      891,
+      363
+     ],
+     [
+      927,
+      353
+     ],
+     [
+      963,
+      363
+     ],
+     [
+      990,
+      390
+     ]
+    ]
+   ],
+   "anchor": [
+    927,
+    426
+   ],
+   "label": [
+    977,
+    706
+   ],
+   "facts": []
+  },
+  {
+   "id": "inferior-horizontal-part-of-the-duodenum",
+   "name": "Inferior (horizontal) part of the duodenum",
+   "aliases": [
+    "inferior part of the duodenum",
+    "horizontal part of the duodenum",
+    "third part of the duodenum",
+    "3rd part of the duodenum"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1122,
+      466
+     ],
+     [
+      1112,
+      502
+     ],
+     [
+      1085,
+      529
+     ],
+     [
+      1049,
+      539
+     ],
+     [
+      1013,
+      529
+     ],
+     [
+      986,
+      502
+     ],
+     [
+      976,
+      466
+     ],
+     [
+      986,
+      430
+     ],
+     [
+      1013,
+      403
+     ],
+     [
+      1049,
+      393
+     ],
+     [
+      1085,
+      403
+     ],
+     [
+      1112,
+      430
+     ]
+    ]
+   ],
+   "anchor": [
+    1049,
+    466
+   ],
+   "label": [
+    1195,
+    706
+   ],
+   "facts": []
+  },
+  {
+   "id": "ascending-part-of-the-duodenum",
+   "name": "Ascending part of the duodenum",
+   "aliases": [
+    "ascending duodenum",
+    "fourth part of the duodenum",
+    "4th part of the duodenum"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1277,
+      409
+     ],
+     [
+      1267,
+      445
+     ],
+     [
+      1240,
+      472
+     ],
+     [
+      1204,
+      482
+     ],
+     [
+      1168,
+      472
+     ],
+     [
+      1141,
+      445
+     ],
+     [
+      1131,
+      409
+     ],
+     [
+      1141,
+      373
+     ],
+     [
+      1168,
+      346
+     ],
+     [
+      1204,
+      336
+     ],
+     [
+      1240,
+      346
+     ],
+     [
+      1267,
+      373
+     ]
+    ]
+   ],
+   "anchor": [
+    1204,
+    409
+   ],
+   "label": [
+    1449,
+    706
+   ],
+   "facts": []
+  }
+ ]
+}

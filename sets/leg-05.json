@@ -1,0 +1,153 @@
+{
+ "id": "leg-05",
+ "title": "Deep posterior leg (cadaver)",
+ "course": "BIO 004",
+ "group": "Leg muscles",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/leg-05.jpg",
+   "width": 1146,
+   "height": 897
+  }
+ ],
+ "structures": [
+  {
+   "id": "posterior-tibial-artery",
+   "name": "Posterior tibial artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      567,
+      311
+     ],
+     [
+      563,
+      328
+     ],
+     [
+      550,
+      341
+     ],
+     [
+      533,
+      345
+     ],
+     [
+      516,
+      341
+     ],
+     [
+      503,
+      328
+     ],
+     [
+      499,
+      311
+     ],
+     [
+      503,
+      294
+     ],
+     [
+      516,
+      281
+     ],
+     [
+      533,
+      277
+     ],
+     [
+      550,
+      281
+     ],
+     [
+      563,
+      294
+     ]
+    ]
+   ],
+   "anchor": [
+    533,
+    311
+   ],
+   "label": [
+    659,
+    278
+   ],
+   "facts": []
+  },
+  {
+   "id": "tibial-nerve",
+   "name": "Tibial nerve",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      538,
+      310
+     ],
+     [
+      534,
+      327
+     ],
+     [
+      521,
+      340
+     ],
+     [
+      504,
+      344
+     ],
+     [
+      487,
+      340
+     ],
+     [
+      474,
+      327
+     ],
+     [
+      470,
+      310
+     ],
+     [
+      474,
+      293
+     ],
+     [
+      487,
+      280
+     ],
+     [
+      504,
+      276
+     ],
+     [
+      521,
+      280
+     ],
+     [
+      534,
+      293
+     ]
+    ]
+   ],
+   "anchor": [
+    504,
+    310
+   ],
+   "label": [
+    300,
+    336
+   ],
+   "facts": []
+  }
+ ]
+}

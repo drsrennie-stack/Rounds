@@ -1,0 +1,223 @@
+{
+ "id": "leg-02",
+ "title": "Leg, anterolateral deeper (cadaver)",
+ "course": "BIO 004",
+ "group": "Leg muscles",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/leg-02.jpg",
+   "width": 1254,
+   "height": 897
+  }
+ ],
+ "structures": [
+  {
+   "id": "anterior-tibial-artery",
+   "name": "Anterior tibial artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      646,
+      387
+     ],
+     [
+      641,
+      406
+     ],
+     [
+      627,
+      420
+     ],
+     [
+      608,
+      425
+     ],
+     [
+      589,
+      420
+     ],
+     [
+      575,
+      406
+     ],
+     [
+      570,
+      387
+     ],
+     [
+      575,
+      368
+     ],
+     [
+      589,
+      354
+     ],
+     [
+      608,
+      349
+     ],
+     [
+      627,
+      354
+     ],
+     [
+      641,
+      368
+     ]
+    ]
+   ],
+   "anchor": [
+    608,
+    387
+   ],
+   "label": [
+    489,
+    410
+   ],
+   "facts": []
+  },
+  {
+   "id": "extensor-digitorum-longus",
+   "name": "Extensor digitorum longus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      665,
+      434
+     ],
+     [
+      660,
+      453
+     ],
+     [
+      646,
+      467
+     ],
+     [
+      627,
+      472
+     ],
+     [
+      608,
+      467
+     ],
+     [
+      594,
+      453
+     ],
+     [
+      589,
+      434
+     ],
+     [
+      594,
+      415
+     ],
+     [
+      608,
+      401
+     ],
+     [
+      627,
+      396
+     ],
+     [
+      646,
+      401
+     ],
+     [
+      660,
+      415
+     ]
+    ]
+   ],
+   "anchor": [
+    627,
+    434
+   ],
+   "label": [
+    733,
+    441
+   ],
+   "facts": []
+  },
+  {
+   "id": "deep-fibular-nerve",
+   "name": "Deep fibular nerve",
+   "aliases": [
+    "deep peroneal nerve"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      639,
+      449
+     ],
+     [
+      634,
+      468
+     ],
+     [
+      620,
+      482
+     ],
+     [
+      601,
+      487
+     ],
+     [
+      582,
+      482
+     ],
+     [
+      568,
+      468
+     ],
+     [
+      563,
+      449
+     ],
+     [
+      568,
+      430
+     ],
+     [
+      582,
+      416
+     ],
+     [
+      601,
+      411
+     ],
+     [
+      620,
+      416
+     ],
+     [
+      634,
+      430
+     ]
+    ]
+   ],
+   "anchor": [
+    601,
+    449
+   ],
+   "label": [
+    489,
+    523
+   ],
+   "facts": []
+  }
+ ]
+}

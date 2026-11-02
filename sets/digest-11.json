@@ -1,0 +1,85 @@
+{
+ "id": "digest-11",
+ "title": "Greater omentum, cadaver",
+ "course": "BIO 004",
+ "group": "Digestive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/digest-11.jpg",
+   "width": 890,
+   "height": 860
+  }
+ ],
+ "structures": [
+  {
+   "id": "greater-omentum",
+   "name": "Greater omentum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      433,
+      171
+     ],
+     [
+      429,
+      185
+     ],
+     [
+      419,
+      195
+     ],
+     [
+      405,
+      199
+     ],
+     [
+      391,
+      195
+     ],
+     [
+      381,
+      185
+     ],
+     [
+      377,
+      171
+     ],
+     [
+      381,
+      157
+     ],
+     [
+      391,
+      147
+     ],
+     [
+      405,
+      143
+     ],
+     [
+      419,
+      147
+     ],
+     [
+      429,
+      157
+     ]
+    ]
+   ],
+   "anchor": [
+    405,
+    171
+   ],
+   "label": [
+    300,
+    508
+   ],
+   "facts": []
+  }
+ ]
+}

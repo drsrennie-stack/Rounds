@@ -1,0 +1,153 @@
+{
+ "id": "digest-10",
+ "title": "Peritoneum",
+ "course": "BIO 004",
+ "group": "Digestive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/digest-10.jpg",
+   "width": 600,
+   "height": 1080
+  }
+ ],
+ "structures": [
+  {
+   "id": "parietal-peritoneum",
+   "name": "Parietal peritoneum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      351,
+      593
+     ],
+     [
+      347,
+      607
+     ],
+     [
+      337,
+      617
+     ],
+     [
+      323,
+      621
+     ],
+     [
+      309,
+      617
+     ],
+     [
+      299,
+      607
+     ],
+     [
+      295,
+      593
+     ],
+     [
+      299,
+      579
+     ],
+     [
+      309,
+      569
+     ],
+     [
+      323,
+      565
+     ],
+     [
+      337,
+      569
+     ],
+     [
+      347,
+      579
+     ]
+    ]
+   ],
+   "anchor": [
+    323,
+    593
+   ],
+   "label": [
+    280,
+    500
+   ],
+   "facts": []
+  },
+  {
+   "id": "visceral-peritoneum",
+   "name": "Visceral peritoneum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      264,
+      442
+     ],
+     [
+      260,
+      456
+     ],
+     [
+      250,
+      466
+     ],
+     [
+      236,
+      470
+     ],
+     [
+      222,
+      466
+     ],
+     [
+      212,
+      456
+     ],
+     [
+      208,
+      442
+     ],
+     [
+      212,
+      428
+     ],
+     [
+      222,
+      418
+     ],
+     [
+      236,
+      414
+     ],
+     [
+      250,
+      418
+     ],
+     [
+      260,
+      428
+     ]
+    ]
+   ],
+   "anchor": [
+    236,
+    442
+   ],
+   "label": [
+    318,
+    520
+   ],
+   "facts": []
+  }
+ ]
+}

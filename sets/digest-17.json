@@ -1,0 +1,225 @@
+{
+ "id": "digest-17",
+ "title": "Mesentery of the small intestine (cadaver)",
+ "course": "BIO 004",
+ "group": "Digestive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/digest-17.jpg",
+   "width": 1248,
+   "height": 790
+  }
+ ],
+ "structures": [
+  {
+   "id": "ileum",
+   "name": "Ileum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      524,
+      246
+     ],
+     [
+      519,
+      265
+     ],
+     [
+      506,
+      278
+     ],
+     [
+      487,
+      283
+     ],
+     [
+      468,
+      278
+     ],
+     [
+      455,
+      265
+     ],
+     [
+      450,
+      246
+     ],
+     [
+      455,
+      227
+     ],
+     [
+      468,
+      214
+     ],
+     [
+      487,
+      209
+     ],
+     [
+      506,
+      214
+     ],
+     [
+      519,
+      227
+     ]
+    ]
+   ],
+   "anchor": [
+    487,
+    246
+   ],
+   "label": [
+    253,
+    211
+   ],
+   "facts": []
+  },
+  {
+   "id": "jejunum",
+   "name": "Jejunum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      710,
+      299
+     ],
+     [
+      705,
+      318
+     ],
+     [
+      692,
+      331
+     ],
+     [
+      673,
+      336
+     ],
+     [
+      654,
+      331
+     ],
+     [
+      641,
+      318
+     ],
+     [
+      636,
+      299
+     ],
+     [
+      641,
+      280
+     ],
+     [
+      654,
+      267
+     ],
+     [
+      673,
+      262
+     ],
+     [
+      692,
+      267
+     ],
+     [
+      705,
+      280
+     ]
+    ]
+   ],
+   "anchor": [
+    673,
+    299
+   ],
+   "label": [
+    1029,
+    295
+   ],
+   "facts": []
+  },
+  {
+   "id": "mesentery",
+   "name": "Mesentery",
+   "aliases": [
+    "mesentery of the small intestine",
+    "mesentery proper",
+    "small intestine mesentery"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      578,
+      380
+     ],
+     [
+      573,
+      399
+     ],
+     [
+      560,
+      412
+     ],
+     [
+      541,
+      417
+     ],
+     [
+      522,
+      412
+     ],
+     [
+      509,
+      399
+     ],
+     [
+      504,
+      380
+     ],
+     [
+      509,
+      361
+     ],
+     [
+      522,
+      348
+     ],
+     [
+      541,
+      343
+     ],
+     [
+      560,
+      348
+     ],
+     [
+      573,
+      361
+     ]
+    ]
+   ],
+   "anchor": [
+    541,
+    380
+   ],
+   "label": [
+    253,
+    366
+   ],
+   "facts": []
+  }
+ ]
+}

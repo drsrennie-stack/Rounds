@@ -1,0 +1,153 @@
+{
+ "id": "leg-01",
+ "title": "Leg, anterolateral (cadaver)",
+ "course": "BIO 004",
+ "group": "Leg muscles",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/leg-01.jpg",
+   "width": 1243,
+   "height": 897
+  }
+ ],
+ "structures": [
+  {
+   "id": "tibialis-anterior",
+   "name": "Tibialis anterior",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      589,
+      290
+     ],
+     [
+      584,
+      309
+     ],
+     [
+      571,
+      322
+     ],
+     [
+      552,
+      327
+     ],
+     [
+      533,
+      322
+     ],
+     [
+      520,
+      309
+     ],
+     [
+      515,
+      290
+     ],
+     [
+      520,
+      271
+     ],
+     [
+      533,
+      258
+     ],
+     [
+      552,
+      253
+     ],
+     [
+      571,
+      258
+     ],
+     [
+      584,
+      271
+     ]
+    ]
+   ],
+   "anchor": [
+    552,
+    290
+   ],
+   "label": [
+    393,
+    315
+   ],
+   "facts": []
+  },
+  {
+   "id": "extensor-digitorum-longus",
+   "name": "Extensor digitorum longus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      589,
+      458
+     ],
+     [
+      584,
+      477
+     ],
+     [
+      571,
+      490
+     ],
+     [
+      552,
+      495
+     ],
+     [
+      533,
+      490
+     ],
+     [
+      520,
+      477
+     ],
+     [
+      515,
+      458
+     ],
+     [
+      520,
+      439
+     ],
+     [
+      533,
+      426
+     ],
+     [
+      552,
+      421
+     ],
+     [
+      571,
+      426
+     ],
+     [
+      584,
+      439
+     ]
+    ]
+   ],
+   "anchor": [
+    552,
+    458
+   ],
+   "label": [
+    722,
+    493
+   ],
+   "facts": []
+  }
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "id": "digest-12",
+ "title": "Lesser omentum, cadaver",
+ "course": "BIO 004",
+ "group": "Digestive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/digest-12.jpg",
+   "width": 910,
+   "height": 925
+  }
+ ],
+ "structures": [
+  {
+   "id": "lesser-omentum",
+   "name": "Lesser omentum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      592,
+      344
+     ],
+     [
+      588,
+      358
+     ],
+     [
+      578,
+      368
+     ],
+     [
+      564,
+      372
+     ],
+     [
+      550,
+      368
+     ],
+     [
+      540,
+      358
+     ],
+     [
+      536,
+      344
+     ],
+     [
+      540,
+      330
+     ],
+     [
+      550,
+      320
+     ],
+     [
+      564,
+      316
+     ],
+     [
+      578,
+      320
+     ],
+     [
+      588,
+      330
+     ]
+    ]
+   ],
+   "anchor": [
+    564,
+    344
+   ],
+   "label": [
+    402,
+    404
+   ],
+   "facts": []
+  }
+ ]
+}

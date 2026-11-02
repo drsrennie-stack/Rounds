@@ -1,0 +1,296 @@
+{
+ "id": "thigh-13",
+ "title": "Gluteal region and thigh, posterior (cadaver)",
+ "course": "BIO 004",
+ "group": "Thigh and gluteal muscles",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/thigh-13.jpg",
+   "width": 1477,
+   "height": 897
+  }
+ ],
+ "structures": [
+  {
+   "id": "gluteus-medius",
+   "name": "Gluteus medius",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      843,
+      39
+     ],
+     [
+      837,
+      61
+     ],
+     [
+      821,
+      77
+     ],
+     [
+      799,
+      83
+     ],
+     [
+      777,
+      77
+     ],
+     [
+      761,
+      61
+     ],
+     [
+      755,
+      39
+     ],
+     [
+      761,
+      17
+     ],
+     [
+      777,
+      1
+     ],
+     [
+      799,
+      -5
+     ],
+     [
+      821,
+      1
+     ],
+     [
+      837,
+      17
+     ]
+    ]
+   ],
+   "anchor": [
+    799,
+    39
+   ],
+   "label": [
+    538,
+    77
+   ],
+   "facts": []
+  },
+  {
+   "id": "gluteus-maximus",
+   "name": "Gluteus maximus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      872,
+      281
+     ],
+     [
+      866,
+      303
+     ],
+     [
+      850,
+      319
+     ],
+     [
+      828,
+      325
+     ],
+     [
+      806,
+      319
+     ],
+     [
+      790,
+      303
+     ],
+     [
+      784,
+      281
+     ],
+     [
+      790,
+      259
+     ],
+     [
+      806,
+      243
+     ],
+     [
+      828,
+      237
+     ],
+     [
+      850,
+      243
+     ],
+     [
+      866,
+      259
+     ]
+    ]
+   ],
+   "anchor": [
+    828,
+    281
+   ],
+   "label": [
+    538,
+    258
+   ],
+   "facts": []
+  },
+  {
+   "id": "iliotibial-tract-it-band",
+   "name": "Iliotibial tract (IT band)",
+   "aliases": [
+    "it band",
+    "iliotibial band",
+    "iliotibial tract"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      782,
+      520
+     ],
+     [
+      776,
+      542
+     ],
+     [
+      760,
+      558
+     ],
+     [
+      738,
+      564
+     ],
+     [
+      716,
+      558
+     ],
+     [
+      700,
+      542
+     ],
+     [
+      694,
+      520
+     ],
+     [
+      700,
+      498
+     ],
+     [
+      716,
+      482
+     ],
+     [
+      738,
+      476
+     ],
+     [
+      760,
+      482
+     ],
+     [
+      776,
+      498
+     ]
+    ]
+   ],
+   "anchor": [
+    738,
+    520
+   ],
+   "label": [
+    569,
+    496
+   ],
+   "facts": []
+  },
+  {
+   "id": "hamstring-muscles",
+   "name": "Hamstring muscles",
+   "aliases": [
+    "hamstrings",
+    "hamstring"
+   ],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      896,
+      548
+     ],
+     [
+      890,
+      570
+     ],
+     [
+      874,
+      586
+     ],
+     [
+      852,
+      592
+     ],
+     [
+      830,
+      586
+     ],
+     [
+      814,
+      570
+     ],
+     [
+      808,
+      548
+     ],
+     [
+      814,
+      526
+     ],
+     [
+      830,
+      510
+     ],
+     [
+      852,
+      504
+     ],
+     [
+      874,
+      510
+     ],
+     [
+      890,
+      526
+     ]
+    ]
+   ],
+   "anchor": [
+    852,
+    548
+   ],
+   "label": [
+    1092,
+    549
+   ],
+   "facts": []
+  }
+ ]
+}
