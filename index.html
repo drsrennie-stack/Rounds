@@ -185,8 +185,8 @@ footer{max-width:1180px;margin:0 auto;padding:0 24px 40px;color:var(--ink-soft);
 </script>
 <script>
 (function(){
-  var id=(new URLSearchParams(location.search)).get("frame")||"rounds-index";
-  function send(){ try{ parent.postMessage({type:"frameHeight",id:id,height:document.documentElement.scrollHeight},"*"); }catch(e){} }
+  var q=new URLSearchParams(location.search); var id=q.get("frameId")||q.get("frame")||"rounds-index";
+  function send(){ try{ if(window.parent&&window.parent!==window){ parent.postMessage({type:"resize",id:id,height:document.documentElement.scrollHeight},"*"); parent.postMessage({type:"frameHeight",id:id,height:document.documentElement.scrollHeight},"*"); } }catch(e){} }
   if("ResizeObserver" in window){ new ResizeObserver(send).observe(document.body); }
   window.addEventListener("load",send); window.addEventListener("resize",send); send();
 })();
