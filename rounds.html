@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#060B1A; --navy-2:#0F1830; --maroon:#8B2E2E; --gold:#E3B341; --gold-brushed:#B8924A;
+  --navy:#02050F; --navy-2:#081026; --maroon:#8B2E2E; --gold:#E3B341; --gold-brushed:#B8924A;
   --ink:#1A1F2E; --ink-soft:#4A5064; --line:#D9DCE3; --page:#FAFAF9; --card:#FFFFFF;
   --locked:#9AA0AE; --tint:#EDF1F3; --ok:#1E3D4C; --miss:#B3261E; --focus:#E3B341;
   --shadow-rest:0 1px 3px rgba(0,0,0,.08); --shadow-hover:0 8px 16px rgba(0,0,0,.10);
@@ -31,8 +31,9 @@ a{color:var(--maroon)}
 .begin{text-align:center;padding:0 24px}
 .begin .eb{font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;color:var(--gold)}
 .begin h2{font-family:"Plus Jakarta Sans";font-weight:800;font-size:clamp(46px,9vw,120px);line-height:.95;letter-spacing:-.03em;margin:.15em 0 .4em}
-.begin h2 span{color:var(--gold)}
+.begin h2 span{color:var(--maroon)}
 .begin .btn{font-size:13px;padding:16px 28px}
+.begin .btn:hover{background:#A33636 !important;border-color:#A33636 !important}
 .hello svg{width:min(88vw,1100px);height:auto;overflow:visible}
 .hello text{font-family:"Plus Jakarta Sans";font-weight:800;font-size:200px;letter-spacing:-6px;fill:transparent;stroke:#fff;stroke-width:2.2;stroke-dasharray:1400;stroke-dashoffset:1400}
 .hello.on text{animation:draw 1.9s ease forwards,fillw .7s ease 1.5s forwards}
@@ -185,7 +186,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
     <div>
       <div class="eb" id="filmEb">BIO 004 Human Anatomy</div>
       <h2>Rounds<span>.</span></h2>
-      <button class="btn gold" id="beginBtn" type="button">Begin</button>
+      <button class="btn" id="beginBtn" type="button" style="background:var(--maroon);border-color:var(--maroon);color:#fff">Begin</button>
     </div>
   </div>
   <div class="scene hello" id="s1" aria-hidden="true">
@@ -202,7 +203,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 <header class="band">
   <div class="wrap">
     <div class="eyebrow" id="eyebrow">BIO 004 · Human Anatomy · MedMasters Collaborative</div>
-    <h1>Rounds: <span id="setTitle"></span></h1>
+    <h1><a href="index.html" target="_top" style="color:inherit;text-decoration:none">Rounds</a>: <span id="setTitle"></span></h1>
     <p class="sub">Six rounds, same structures every time. A clean pass with no misses unlocks the next round.</p>
     <div class="meta">
       <span class="pill" id="pillCount"></span>
@@ -260,7 +261,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 </main>
 
 <footer>
-  <span id="byline">Dr. Sharilyn Rennie</span>
+  <span id="byline">Dr. Sharilyn Rennie</span> · <a href="index.html" target="_top">All modules</a>
   <span class="row" style="margin-top:10px">
     <label for="setPick" style="margin:0;font-size:13px">Set</label>
     <select id="setPick" style="width:auto;margin:0;padding:6px 10px"></select>
@@ -781,6 +782,8 @@ function speak(text){
 function sayName(s){ playClip(s,"name", "Point to the "+(s.say||s.name)); }
 function sayCaption(s){ playClip(s,"caption", (s.say||s.name)+". "+s.caption); }
 function sayClue(s,i,f){ playClip(s,"clue"+(i+1), f.q); }
+function factAnswer(f){ const a=f.answer || f.a[0]; return a.charAt(0).toUpperCase()+a.slice(1); }
+function sayAnswer(s,i,f){ playClip(s,"clue"+(i+1)+"-answer", factAnswer(f)); }
 
 /* ---------- Audio in: recording (students and author) ---------- */
 let studentClips = {};
@@ -848,6 +851,27 @@ async function downloadClips(prefix, keysFilter){
   setStatus(r==="declined"?"Download cancelled.":n+" recording"+(n===1?"":"s")+" downloaded.", r==="declined"?"miss":"ok");
 }
 
+
+/* Compare the student's recording with the instructor's clip. Only shown after the structure has been named correctly. */
+function compareRow(s, key){
+  const row=document.createElement("span"); row.className="row"; row.style.marginTop="0";
+  const mine=document.createElement("button"); mine.type="button"; mine.className="btn ghost sm"; mine.textContent="Mine";
+  mine.disabled=!studentClips[key]; mine.addEventListener("click",()=>{ if(studentClips[key]) playBlob(studentClips[key]); });
+  const ref=document.createElement("button"); ref.type="button"; ref.className="btn ghost sm"; ref.textContent="Dr. Rennie";
+  ref.addEventListener("click",()=>{ const was=soundOn; soundOn=true; sayName(s); soundOn=was; });
+  row.append(mine,ref); return row;
+}
+function compareList(prefix){
+  const wrap=document.createElement("div");
+  const h=document.createElement("h3"); h.style.cssText="margin-top:16px;font-size:16px;color:var(--navy)"; h.textContent="Compare your pronunciation"; wrap.appendChild(h);
+  const p=document.createElement("p"); p.className="small"; p.textContent="Play yours, then Dr. Rennie's, for each structure."; wrap.appendChild(p);
+  const ol=document.createElement("ol"); ol.className="list";
+  SET.structures.forEach((s,i)=>{ const li=document.createElement("li"); li.innerHTML='<span class="n">'+String(i+1).padStart(2,"0")+'</span><span class="grow">'+s.name+'</span>'; li.appendChild(compareRow(s, prefix+"|"+s.id)); ol.appendChild(li); });
+  wrap.appendChild(ol);
+  if(REC_MIME){ const dl=document.createElement("button"); dl.className="btn ghost"; dl.style.marginTop="10px"; dl.textContent="Download my recordings"; dl.addEventListener("click",()=>downloadClips("my-rounds", k=>k.startsWith("recall|")||k.startsWith("name|"))); wrap.appendChild(dl); }
+  return wrap;
+}
+
 /* ---------- Speech in: recognition ---------- */
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition || null;
 function listen(){ return new Promise((res,rej)=>{ const r=new SR(); r.lang="en-US"; r.interimResults=false; r.maxAlternatives=5; let got=false; r.onresult=e=>{ got=true; const alts=[]; for(let i=0;i<e.results[0].length;i++) alts.push(e.results[0][i].transcript); res(alts); }; r.onerror=e=>rej(new Error(e.error)); r.onend=()=>{ if(!got) res([]); }; r.start(); }); }
@@ -872,6 +896,7 @@ function setStatus(msg, cls){ statusEl.textContent=msg; statusEl.className="stat
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function norm(t){ return (t||"").toLowerCase().replace(/[’']/g,"'").replace(/[^a-z0-9' ]+/g," ").replace(/\s+/g," ").trim(); }
 function nameMatches(s, typed){ const t=norm(typed); if(!t) return false; return [s.name].concat(s.aliases||[]).some(n=>norm(n)===t); }
+function answerMatches(f, typed){ const t=norm(typed); if(!t) return false; return f.a.some(x=>norm(x)===t); }
 function pointInPoly(pt, poly){ let inside=false; const [x,y]=pt; for(let i=0,j=poly.length-1;i<poly.length;j=i++){ const [xi,yi]=poly[i],[xj,yj]=poly[j]; if(((yi>y)!==(yj>y)) && (x<(xj-xi)*(y-yi)/(yj-yi)+xi)) inside=!inside; } return inside; }
 function polyArea(p){ let a=0; for(let i=0;i<p.length;i++){ const [x1,y1]=p[i],[x2,y2]=p[(i+1)%p.length]; a+=x1*y2-x2*y1; } return Math.abs(a/2); }
 function minArea(s){ return Math.min.apply(null, s.polygons.map(polyArea)); }
@@ -936,7 +961,7 @@ const ROUNDS=[
   {n:"01", lab:"Find it", title:"<span>Find</span> it", help:"You hear or see a name. Click that structure on the model. One miss restarts the pass."},
   {n:"02", lab:"Name it", title:"<span>Name</span> it", help:"A structure lights up. Say its name, then type it. Spelling counts. One miss restarts the pass."},
   {n:"03", lab:"Recall", title:"<span>Recall</span>", help:"No prompts. Click a structure, type its name, repeat until you have found all of them."},
-  {n:"04", lab:"Clues", title:"<span>Clues</span>", help:"You get a clue about a structure. Click it, then type its name."},
+  {n:"04", lab:"Clues", title:"<span>Clues</span>", help:"You hear a question about a structure. Click the structure, then type the answer to the question."},
   {n:"05", lab:"Teach it", title:"<span>Teach</span> it", help:"For each structure, write what you know about it. Then compare with the tour notes."}
 ];
 function renderNav(){
@@ -1037,7 +1062,7 @@ function round2(){
   body.innerHTML='<div class="prompt" id="nameCue">Press Start</div>'
     +'<label for="nameInput">Type the name of the highlighted structure</label><div class="inline"><input type="text" id="nameInput" autocomplete="off" autocapitalize="off" spellcheck="false" disabled><span id="say2"></span><span id="rec2"></span></div>'
     +'<div class="tally" id="tally"></div>'
-    +'<div class="row"><button class="btn" id="start2">Start pass</button><button class="btn ghost" id="check2" disabled>Check</button></div>';
+    +'<div class="row"><button class="btn" id="start2">Start pass</button><button class="btn ghost" id="check2" disabled>Check</button></div><div id="cmp2"></div>';
   hint.textContent="One structure is highlighted. Say its name, then type it.";
   r2={order:[],idx:-1,results:[]};
   afterFrameChange=()=>{ clearSvg(); drawZones(null,null); if(r2.idx>=0 && r2.order[r2.idx].frame===frameId) flash(r2.order[r2.idx].id,"show"); };
@@ -1052,7 +1077,7 @@ function startPass2(){ r2.order=shuffle(SET.structures); r2.idx=0; r2.results=[]
 function askName(){
   const s=r2.order[r2.idx]; if(s.frame!==frameId) setFrame(s.frame,true); afterFrameChange();
   $("nameCue").textContent="Structure "+(r2.idx+1)+" of "+r2.order.length;
-  const rc=$("rec2"); rc.innerHTML=""; rc.appendChild(recControl("name|"+s.id, "this structure"));
+  const rc=$("rec2"); rc.innerHTML=""; rc.appendChild(recControl("name|"+s.id, "this structure")); $("cmp2").innerHTML="";
   const inp=$("nameInput"); inp.value=""; inp.focus();
   speak("What is this structure? Say it, then type it.");
 }
@@ -1060,8 +1085,9 @@ function check2(){
   if(r2.idx<0) return; const s=r2.order[r2.idx];
   if(nameMatches(s,$("nameInput").value)){
     r2.results.push("ok"); renderTally(r2.order.length,r2.results); setStatus("Correct: "+s.name,"ok");
-    if(r2.idx===r2.order.length-1){ setStatus("Clean pass. Round 3 is open.","ok"); unlock(2); r2.idx=-1; $("nameInput").disabled=true; $("check2").disabled=true; $("start2").textContent="Run it again"; }
-    else { r2.idx++; setTimeout(askName,600); }
+    const rc=$("rec2"); rc.innerHTML=""; rc.appendChild(compareRow(s,"name|"+s.id));
+    if(r2.idx===r2.order.length-1){ setStatus("Clean pass. Round 3 is open.","ok"); unlock(2); r2.idx=-1; $("nameInput").disabled=true; $("check2").disabled=true; $("start2").textContent="Run it again"; $("cmp2").innerHTML=""; $("cmp2").appendChild(compareList("name")); }
+    else { r2.idx++; setTimeout(askName,1400); }
   } else {
     r2.results.push("miss"); renderTally(r2.order.length,r2.results);
     setStatus("Not quite. It is spelled: "+s.name+". The pass restarts.","miss"); speak("Not quite. It is the "+(s.say||s.name)+". Try the pass again.");
@@ -1103,7 +1129,7 @@ function check3(){
   if(nameMatches(s,$("recallInput").value)){
     r3.found.push(s.id); flash(s.id,"found"); svg.querySelectorAll(".pick").forEach(p=>p.remove());
     $("foundCount").textContent=r3.found.length;
-    const li=document.createElement("li"); li.innerHTML='<span class="n">'+String(r3.found.length).padStart(2,"0")+'</span><span class="grow">'+s.name+'</span>'; $("foundList").appendChild(li);
+    const li=document.createElement("li"); li.innerHTML='<span class="n">'+String(r3.found.length).padStart(2,"0")+'</span><span class="grow">'+s.name+'</span>'; li.appendChild(compareRow(s,"recall|"+s.id)); $("foundList").appendChild(li);
     setStatus("Yes: "+s.name,"ok"); speak("Yes, "+(s.say||s.name));
     r3.pending=null; $("recallInput").disabled=true; $("check3").disabled=true; $("recallInput").value=""; $("rec3").innerHTML="";
     $("r3hint").textContent="Click the next structure.";
@@ -1119,9 +1145,7 @@ function finish3(){
   else { missed.forEach(s=>{ if(s.frame===frameId) flash(s.id,"miss"); }); setStatus("You missed "+missed.length+": "+missed.map(s=>s.name).join(", ")+". Run Round 3 again.","miss"); }
   const row=document.createElement("div"); row.className="row";
   const again=document.createElement("button"); again.className="btn"; again.textContent="Run it again"; again.addEventListener("click",()=>startRound(3));
-  const dl=document.createElement("button"); dl.className="btn ghost"; dl.textContent="Download my recordings"; dl.addEventListener("click",()=>downloadClips("my-rounds", k=>k.startsWith("recall|")||k.startsWith("name|")));
-  if(!REC_MIME) dl.classList.add("hide");
-  row.append(again,dl); body.appendChild(row);
+  row.append(again); body.appendChild(row); body.appendChild(compareList("recall"));
 }
 
 /* ---------- Round 4: Clues ---------- */
@@ -1132,7 +1156,7 @@ function round4(){
   if(!items.length){ body.innerHTML='<p>No clues have been written for this set yet.</p>'; unlock(4); return; }
   body.innerHTML='<div class="prompt" id="clueText" aria-live="polite">Press Start</div>'
     +'<p class="small" id="r4hint">First click the structure the clue describes.</p>'
-    +'<label for="clueInput">Then type its name</label><div class="inline"><input type="text" id="clueInput" autocomplete="off" autocapitalize="off" spellcheck="false" disabled><span id="say4"></span></div>'
+    +'<label for="clueInput">Then type the answer</label><div class="inline"><input type="text" id="clueInput" autocomplete="off" autocapitalize="off" spellcheck="false" disabled></div><div class="cap" id="ans4"></div>'
     +'<div class="tally" id="tally"></div>'
     +'<div class="row"><button class="btn" id="start4">Start</button><button class="btn ghost" id="replay4">Hear it again</button><button class="btn ghost" id="check4" disabled>Check</button></div>';
   hint.textContent="Listen to the clue, then click the structure it describes.";
@@ -1140,7 +1164,6 @@ function round4(){
   afterFrameChange=()=>{ clearSvg(); drawZones(letterMap(false), s=>click4(s)); };
   afterFrameChange();
   stage.onclick=e=>{ if(!r4||r4.idx<0||r4.clicked) return; click4(hitTest(svgPoint(e))); };
-  $("say4").appendChild(sayItButton(()=>r4.idx>=0?r4.order[r4.idx].s:null,(ok,heard)=>{ setStatus(ok?"Heard you say "+heard+". Now type it.":"Heard \""+heard+"\". Try again, then type it.", ok?"ok":"miss"); }));
   $("start4").addEventListener("click",()=>{ r4.order=shuffle(items); r4.idx=0; r4.results=[]; setStatus("",""); $("start4").textContent="Restart"; renderTally(items.length,[]); askClue(); });
   $("replay4").addEventListener("click",()=>{ if(r4.idx>=0){ const it=r4.order[r4.idx]; sayClue(it.s,it.i,it.f); } });
   $("check4").addEventListener("click",check4);
@@ -1150,19 +1173,22 @@ function round4(){
 function askClue(){
   const it=r4.order[r4.idx]; r4.clicked=false; clearCls("show"); clearCls("ok");
   $("clueText").textContent=it.f.q; $("r4hint").textContent="First click the structure the clue describes.";
-  $("clueInput").disabled=true; $("clueInput").value=""; $("check4").disabled=true;
+  $("clueInput").disabled=true; $("clueInput").value=""; $("check4").disabled=true; $("ans4").textContent="";
   sayClue(it.s,it.i,it.f);
 }
 function click4(s){
   if(r4.idx<0||r4.clicked) return;
   const it=r4.order[r4.idx];
-  if(s && s.id===it.s.id){ r4.clicked=true; flash(s.id,"ok"); $("r4hint").textContent="Right spot. Now type its name."; setStatus("",""); $("clueInput").disabled=false; $("check4").disabled=false; $("clueInput").focus(); }
-  else { r4.clicked=true; r4.results.push("miss"); renderTally(r4.order.length,r4.results); if(it.s.frame!==frameId) setFrame(it.s.frame); flash(it.s.id,"miss",1600); setStatus("Not that one. It is the "+it.s.name+".","miss"); speak("Not that one. It is the "+(it.s.say||it.s.name)+"."); setTimeout(next4,1800); }
+  if(s && s.id===it.s.id){ r4.clicked=true; flash(s.id,"ok"); $("r4hint").textContent="Right spot: "+it.s.name+". Now type the answer to the question."; setStatus("",""); $("clueInput").disabled=false; $("check4").disabled=false; $("clueInput").focus(); }
+  else { r4.clicked=true; r4.results.push("miss"); renderTally(r4.order.length,r4.results); if(it.s.frame!==frameId) setFrame(it.s.frame); flash(it.s.id,"miss",2400); $("ans4").textContent="Answer: "+factAnswer(it.f); setStatus("Not that one. It is the "+it.s.name+".","miss"); speak("Not that one. It is the "+(it.s.say||it.s.name)+". "); setTimeout(()=>sayAnswer(it.s,it.i,it.f),2200); setTimeout(next4,4200); }
 }
 function check4(){
   const it=r4.order[r4.idx]; if(!r4.clicked) return;
-  if(nameMatches(it.s,$("clueInput").value)){ r4.results.push("ok"); renderTally(r4.order.length,r4.results); setStatus("Yes: "+it.s.name,"ok"); setTimeout(next4,600); }
-  else { r4.results.push("miss"); renderTally(r4.order.length,r4.results); setStatus("Not quite. It is spelled: "+it.s.name+".","miss"); setTimeout(next4,2200); }
+  const ok=answerMatches(it.f,$("clueInput").value);
+  r4.results.push(ok?"ok":"miss"); renderTally(r4.order.length,r4.results);
+  $("ans4").textContent="Answer: "+factAnswer(it.f); sayAnswer(it.s,it.i,it.f);
+  setStatus(ok?"Yes. "+factAnswer(it.f):"Not quite. The answer is: "+factAnswer(it.f), ok?"ok":"miss");
+  $("clueInput").disabled=true; $("check4").disabled=true; setTimeout(next4, ok?1800:3200);
 }
 function next4(){
   if(r4.idx>=r4.order.length-1){
@@ -1214,7 +1240,7 @@ function film(){
   let music=null;
   const end=()=>{ f.classList.add("done"); try{ sessionStorage.setItem("roundsIntro:"+SET.id,"1"); }catch(e){} if(music){ const fade=setInterval(()=>{ music.volume=Math.max(0,music.volume-0.05); if(music.volume<=0){ music.pause(); clearInterval(fade); } },80); } };
   $("skipFilm").onclick=end;
-  if(reduce||seen||AUTHOR){ f.classList.add("done"); return; }
+  if(reduce||seen||AUTHOR||params.get("intro")!=="1"){ f.classList.add("done"); return; }
   $("filmEb").textContent=(SET.course||"")+" Human Anatomy";
   $("filmEb2").textContent=(SET.course||"")+" Human Anatomy · MedMasters Collaborative";
   $("filmTitle").textContent=SET.title; $("filmNum").textContent=String(SET.structures.length).padStart(2,"0");
@@ -1295,7 +1321,7 @@ function authorMode(){
   body.innerHTML='<div class="author-list" id="alist"></div>'
     +'<div id="edit"></div>'
     +'<div class="row"><button class="btn ghost sm" id="addPoly">Add a second zone</button><button class="btn ghost sm" id="addStruct">Add a structure</button><button class="btn ghost sm" id="moveFrame">Move to other view</button></div>'
-    +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Recordings</h3><p class="small">Say the prompt the way you say it in lab. Name clip: "Point to the carina." Caption clip: the name and what is special about it. Clue clips: read the clue.</p><div id="micNote" class="small" style="color:var(--miss);font-weight:600"></div><div id="recs"></div>'
+    +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Recordings</h3><p class="small">Say the prompt the way you say it in lab. Name clip: "Point to the carina." Caption clip: the name and what is special about it. Clue clips: read the question. Answers are shown as text; no recording needed.</p><div id="micNote" class="small" style="color:var(--miss);font-weight:600"></div><div id="recs"></div>'
     +'<div class="row"><button class="btn" id="dlClips">Download all clips</button></div>'
     +'<h3 style="margin-top:18px;font-size:16px;color:var(--navy)">Set file</h3><div class="row"><button class="btn" id="copyJson">Copy JSON</button><button class="btn ghost" id="dlJson">Download JSON</button></div><pre id="json"></pre>';
   function list(){
