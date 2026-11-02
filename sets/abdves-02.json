@@ -1,0 +1,221 @@
+{
+ "id": "abdves-02",
+ "title": "Abdominal veins, cadaver",
+ "course": "BIO 004",
+ "group": "Abdominal and pelvic vessels",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/abdves-02.jpg",
+   "width": 1010,
+   "height": 1080
+  }
+ ],
+ "structures": [
+  {
+   "id": "left-renal-vein",
+   "name": "Left renal vein",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      388,
+      259
+     ],
+     [
+      384,
+      274
+     ],
+     [
+      373,
+      285
+     ],
+     [
+      358,
+      289
+     ],
+     [
+      343,
+      285
+     ],
+     [
+      332,
+      274
+     ],
+     [
+      328,
+      259
+     ],
+     [
+      332,
+      244
+     ],
+     [
+      343,
+      233
+     ],
+     [
+      358,
+      229
+     ],
+     [
+      373,
+      233
+     ],
+     [
+      384,
+      244
+     ]
+    ]
+   ],
+   "anchor": [
+    358,
+    259
+   ],
+   "label": [
+    458,
+    356
+   ],
+   "facts": []
+  },
+  {
+   "id": "right-renal-vein",
+   "name": "Right renal vein",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      230,
+      396
+     ],
+     [
+      226,
+      411
+     ],
+     [
+      215,
+      422
+     ],
+     [
+      200,
+      426
+     ],
+     [
+      185,
+      422
+     ],
+     [
+      174,
+      411
+     ],
+     [
+      170,
+      396
+     ],
+     [
+      174,
+      381
+     ],
+     [
+      185,
+      370
+     ],
+     [
+      200,
+      366
+     ],
+     [
+      215,
+      370
+     ],
+     [
+      226,
+      381
+     ]
+    ]
+   ],
+   "anchor": [
+    200,
+    396
+   ],
+   "label": [
+    200,
+    396
+   ],
+   "facts": []
+  },
+  {
+   "id": "inferior-vena-cava",
+   "name": "Inferior vena cava",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      327,
+      427
+     ],
+     [
+      323,
+      442
+     ],
+     [
+      312,
+      453
+     ],
+     [
+      297,
+      457
+     ],
+     [
+      282,
+      453
+     ],
+     [
+      271,
+      442
+     ],
+     [
+      267,
+      427
+     ],
+     [
+      271,
+      412
+     ],
+     [
+      282,
+      401
+     ],
+     [
+      297,
+      397
+     ],
+     [
+      312,
+      401
+     ],
+     [
+      323,
+      412
+     ]
+    ]
+   ],
+   "anchor": [
+    297,
+    427
+   ],
+   "label": [
+    397,
+    516
+   ],
+   "facts": []
+  }
+ ]
+}
