@@ -202,6 +202,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none !important;animation:none !important} }
 .factrow{border:1px solid #d9dde3;border-radius:10px;padding:10px 12px;margin:8px 0}.factrow label{margin-top:6px}
+.checklist{list-style:none;margin:0 0 8px;padding:0}.checklist li{padding:6px 8px;border-radius:8px;display:flex}.checklist li label{display:flex;gap:8px;align-items:center;cursor:pointer;width:100%}.checklist li .n{font-weight:800;color:#8B2E2E;min-width:22px}.checklist li.hot{background:#EDF1F3}.checklist li.flag .nm{color:#B3261E;font-weight:700}.checklist small{color:#5b6670}
 </style>
 </head>
 <body>
@@ -318,6 +319,7 @@ setTimeout(function(){if(!g.classList.contains("hide"))document.getElementById("
       <h2 style="font-size:18px">Edit this <span>set</span></h2>
       <p class="small">Move pins and numbers, reshape the click zones, rename structures, add or remove them, and edit clues. Your changes download as the set file; upload it to the repo to make them live.</p>
       <div class="row">
+        <button class="btn sm ghost" id="instrCheck" type="button">Check pins and zones</button>
         <button class="btn sm" id="instrEdit" type="button">Edit this set</button>
         <a class="btn sm ghost" id="instrBooth" href="record.html" target="_top">Recording studio</a>
       </div>
@@ -363,6 +365,7 @@ const hashP = new URLSearchParams(location.hash.replace(/^#/,""));
 let savedPick={}; try{ savedPick=JSON.parse(sessionStorage.getItem("rounds:pick"))||{}; }catch(e){}
 const setName = params.get("set") || hashP.get("set") || savedPick.set || "larynx-anterior";
 const AUTHOR = params.get("author") === "1" || hashP.get("author") === "1" || savedPick.author === true;
+const CHECK = !AUTHOR && (params.get("check") === "1" || savedPick.check === true);
 const KNOWN_SETS = (()=>{ try{ const all=JSON.parse(document.getElementById("defaultSet").textContent); return Object.keys(all).map(k=>[k, all[k].title]); }catch(e){ return [["larynx-anterior","Larynx, anterior view"]]; } })();
 let SET = null;
 
@@ -961,10 +964,12 @@ async function init(){
   pick.addEventListener("change",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:pick.value,author:AUTHOR})); }catch(e){} location.reload(); });
   $("authorToggle").textContent = AUTHOR ? "Back to student view" : "Author mode";
   let instr=false; try{ instr=localStorage.getItem("rounds:instructor")==="medic"; }catch(e){}
-  if(instr){ $("instrCard").classList.remove("hide"); $("instrEdit").textContent = AUTHOR ? "Back to student view" : "Edit this set"; $("instrEdit").addEventListener("click",()=>$("authorToggle").click()); $("instrBooth").href="record.html?set="+encodeURIComponent(SET.id); }
+  if(instr){ $("instrCard").classList.remove("hide"); $("instrEdit").textContent = AUTHOR ? "Back to student view" : "Edit this set"; $("instrEdit").addEventListener("click",()=>$("authorToggle").click());
+    $("instrCheck").textContent = CHECK ? "Back to student view" : "Check pins and zones"; $("instrCheck").addEventListener("click",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:SET.id,author:false,check:!CHECK})); }catch(e){} location.reload(); }); $("instrBooth").href="record.html?set="+encodeURIComponent(SET.id); }
   $("authorToggle").addEventListener("click",()=>{ try{ sessionStorage.setItem("rounds:pick",JSON.stringify({set:SET.id,author:!AUTHOR})); }catch(e){} location.reload(); });
   film();
   if(AUTHOR){ authorMode(); return; }
+  if(CHECK){ checkMode(); return; }
   loadWeak(); renderNav(); startRound(0); renderWeak();
   $("weakFind").addEventListener("click",()=>startWeakDrill(1));
   $("weakName").addEventListener("click",()=>startWeakDrill(2));
@@ -994,6 +999,43 @@ function walkthrough(){
 function pulse(i){ const b=document.querySelectorAll(".rbtn")[i]; if(!b) return; b.classList.add("pulse"); setTimeout(()=>b.classList.remove("pulse"),4000); }
 
 /* ---------- Author mode ---------- */
+/* Pin check: every zone, pin, and number drawn at once with its name, so the instructor can see what each arrow is tagged as without touching anything. */
+function checkMode(){
+  document.body.classList.add("author");
+  $("roundsNav").innerHTML=""; $("roundEyebrow").textContent="Pin check"; $("roundTitle").innerHTML="Every pin, <span>at once</span>";
+  $("roundHelp").textContent="Each number sits where the student sees it, the pin marks the spot the hand points to, and the shaded shape is the click zone. Hover or tap a name to light it up. Tick anything that is wrong, then copy the notes and send them to me, or open the editor and move it yourself.";
+  hint.textContent="Pin check. Nothing here is scored or saved.";
+  let flagged={}; try{ flagged=JSON.parse(localStorage.getItem("rounds:"+SET.id+":flags"))||{}; }catch(e){}
+  let hot=null;
+  function render(){
+    clearSvg();
+    inFrame().forEach(s=>{
+      const i=SET.structures.indexOf(s); const on=hot===s.id;
+      s.polygons.forEach(poly=>el("polygon",{points:pts(poly),class:"zone"+(on?" sel":"")}));
+      el("line",{x1:s.label[0],y1:s.label[1],x2:s.anchor[0],y2:s.anchor[1],class:"leader",opacity:on?1:.5});
+      const pa={cx:s.anchor[0],cy:s.anchor[1],r:on?10:7,class:"pin"}; if(flagged[s.id]) pa.fill="#B3261E"; el("circle",pa);
+      const g=el("g",{class:"marker"}); const ma={cx:s.label[0],cy:s.label[1],r:22}; if(flagged[s.id]){ ma.fill="#B3261E"; ma.stroke="#B3261E"; } el("circle",ma,g); const t=el("text",{x:s.label[0],y:s.label[1]},g); t.textContent=i+1;
+      const f=frame(); const left=s.label[0]>f.width*0.6; const tx=s.label[0]+(left?-30:30);
+      const lab=el("text",{x:tx,y:s.label[1]+5,"text-anchor":left?"end":"start","font-size":"18","font-weight":"700",fill:"#1E3D4C",stroke:"#fff","stroke-width":"5","paint-order":"stroke",class:"checklab"}); lab.textContent=s.name;
+    });
+  }
+  afterFrameChange=render;
+  body.innerHTML='<ol class="checklist" id="clist"></ol><div class="row"><button class="btn sm" id="copyFlags">Copy notes</button><button class="btn sm ghost" id="clearFlags">Clear ticks</button></div><p class="small" id="flagNote"></p>';
+  function list(){
+    const L=$("clist"); L.innerHTML="";
+    SET.structures.forEach((s,i)=>{ const li=document.createElement("li"); li.className=(flagged[s.id]?"flag ":"")+(hot===s.id?"hot":"");
+      li.innerHTML='<label><input type="checkbox" '+(flagged[s.id]?"checked":"")+' aria-label="Mark '+s.name.replace(/"/g,"&quot;")+' as wrong"> <span class="n">'+(i+1)+'</span> <span class="nm">'+s.name+'</span>'+(SET.frames.length>1?' <small>'+SET.frames.find(f=>f.id===s.frame).label+'</small>':'')+'</label>';
+      li.querySelector("input").addEventListener("change",e=>{ if(e.target.checked) flagged[s.id]=true; else delete flagged[s.id]; try{ localStorage.setItem("rounds:"+SET.id+":flags",JSON.stringify(flagged)); }catch(x){} render(); list(); });
+      const go=()=>{ hot=s.id; if(s.frame!==frameId) setFrame(s.frame,true); render(); list(); };
+      li.addEventListener("mouseenter",go); li.addEventListener("focusin",go); li.querySelector(".nm").addEventListener("click",go);
+      L.appendChild(li); });
+    const n=Object.keys(flagged).length; $("flagNote").textContent=n?n+" marked as wrong on this set.":"";
+  }
+  $("copyFlags").addEventListener("click",()=>{ const lines=SET.structures.filter(s=>flagged[s.id]).map((s)=>(SET.structures.indexOf(s)+1)+". "+s.name); const txt=SET.id+" ("+SET.title+"): wrong pins or zones\n"+(lines.length?lines.join("\n"):"none"); navigator.clipboard.writeText(txt).then(()=>setStatus("Notes copied. Paste them to me.","ok")); });
+  $("clearFlags").addEventListener("click",()=>{ flagged={}; try{ localStorage.removeItem("rounds:"+SET.id+":flags"); }catch(x){} render(); list(); });
+  svg.addEventListener("mousemove",e=>{ const s=hitTest(svgPoint(e)); const id=s?s.id:null; if(id!==hot){ hot=id; render(); list(); } });
+  list(); render();
+}
 function authorMode(){
   document.body.classList.add("author");
   $("roundsNav").innerHTML=""; $("roundEyebrow").textContent="Author mode"; $("roundTitle").innerHTML="Zones, markers, and <span>recordings</span>";
