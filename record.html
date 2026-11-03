@@ -139,7 +139,7 @@ setTimeout(function(){if(!g.classList.contains("hide"))document.getElementById("
 "use strict";
 const SETS=JSON.parse(document.getElementById("sets").textContent);
 const HAVE=new Set(JSON.parse(document.getElementById("have").textContent));
-const PHRASES={"what-is-this":"What is this structure? Say it, then type it.","not-that-one":"Not that one. Try the pass again.","not-quite":"Not quite. It's the","try-again":"Try the pass again.","yes":"Yes.","awesome":"Awesome.","perfect":"Perfect.","yep":"Yep!","nice":"Nice.","thats-it":"That's it.","got-it":"Got it.","it-is-the":"Not that one. It's the","clean-pass":"Clean pass. The next round is open."};
+const PHRASES={"what-is-this":"What is this structure? Say it, then type it.","not-that-one":"Not that one. Try the pass again.","not-quite":"Not quite. It's the","try-again":"Try the pass again.","yes":"Yes.","awesome":"Awesome.","perfect":"Perfect.","yep":"Yep!","nice":"Nice.","thats-it":"That's it.","got-it":"Got it.","it-is-the":"Not that one. It's the","almost-again":"Almost. Let's run it again.","one-more-pass":"Not quite. One more pass.","from-the-top":"Close. Take it from the top.","close-its-the":"Close. That one is the","almost-its-the":"Almost. It's the","clean-pass":"Clean pass. The next round is open."};
 const $=id=>document.getElementById(id);
 const DB="rounds-clips"; let clips={};
 function db(){ return new Promise((res,rej)=>{ const r=indexedDB.open(DB,1); r.onupgradeneeded=()=>r.result.createObjectStore("clips"); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }

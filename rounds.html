@@ -430,6 +430,11 @@ const PHRASES = {
   "thats-it":     "That's it.",
   "got-it":       "Got it.",
   "it-is-the":    "Not that one. It's the",
+  "almost-again": "Almost. Let's run it again.",
+  "one-more-pass":"Not quite. One more pass.",
+  "from-the-top": "Close. Take it from the top.",
+  "close-its-the":"Close. That one is the",
+  "almost-its-the":"Almost. It's the",
   "clean-pass":   "Clean pass. The next round is open."
 };
 const COMMON = {id:"common", name:"common"};
@@ -458,7 +463,7 @@ async function playSeq(items){
   if(curAudio){ try{ curAudio.pause(); }catch(e){} curAudio=null; }
   for(const it of items){
     if(my!==seqToken) return;
-    if(it.phraseAny){ const pool=[]; for(const id of it.phraseAny){ if(await findAny(commonBase(id),"common|"+id)) pool.push(id); } const pick=pool.filter(id=>id!==lastYes); const chosen=(pick.length?pick:pool)[Math.floor(Math.random()*Math.max(1,(pick.length?pick:pool).length))]; it.phrase=chosen||"yes"; it.text=PHRASES[it.phrase]; lastYes=it.phrase; }
+    if(it.phraseAny){ const pool=[]; for(const id of it.phraseAny){ if(await findAny(commonBase(id),"common|"+id)) pool.push(id); } const pick=pool.filter(id=>id!==lastPick[it.phraseAny[0]]); const from=pick.length?pick:pool; const chosen=from[Math.floor(Math.random()*from.length)]; it.phrase=chosen||it.phraseAny[0]; it.text=PHRASES[it.phrase]||it.text; lastPick[it.phraseAny[0]]=it.phrase; }
     let a = it.phrase ? await findAny(commonBase(it.phrase), "common|"+it.phrase) : await findAny(audioBase(it.s,it.kind), it.s.id+"|"+it.kind);
     if(!a && !it.phrase && (it.kind==="say"||it.kind==="name")) a = await findAny("audio/library/"+it.s.id+"-"+it.kind, "library|"+it.s.id+"|"+it.kind);
     if(my!==seqToken) return;
@@ -472,8 +477,13 @@ function bare(s){ return {s, kind:"say", text:(s.say||s.name)}; }
 function ph(id){ return {phrase:id, text:PHRASES[id]}; }
 /* A random "correct" word. Only the ones Dr. Rennie has recorded are used; if none are on file yet, the plain "Yes." fallback plays. */
 const YES_IDS=["yes","awesome","perfect","yep","nice","thats-it","got-it"];
-let lastYes=null;
+const lastPick={};
 function yes(){ return {phraseAny:YES_IDS, text:"Yes."}; }
+/* A random miss line. Standalone ones end the sentence; lead-in ones are followed by the structure's name. */
+const NO_IDS=["not-that-one","almost-again","one-more-pass","from-the-top"];
+const ITS_IDS=["not-quite","it-is-the","close-its-the","almost-its-the"];
+function no(){ return {phraseAny:NO_IDS, text:"Not that one. Try the pass again."}; }
+function itsThe(){ return {phraseAny:ITS_IDS, text:"Not that one. It's the"}; }
 function sayName(s){ playSeq([{s, kind:"name", text:"Point to the "+(s.say||s.name)}]); }
 function sayBare(s){ playSeq([bare(s)]); }
 function sayClue(s,i,f){ playSeq([{s, kind:"clue"+(i+1), text:f.q}]); }
@@ -746,7 +756,7 @@ function answer1(s){
     r1.results.push("miss"); renderTally(r1.order.length,r1.results);
     if(target.frame!==frameId) setFrame(target.frame);
     flash(target.id,"miss",1600); if(s) flash(s.id,"miss",600);
-    setStatus("Not that one. The correct spot is outlined. The pass restarts.","miss"); r1.idx=-1; playSeq([ph("not-that-one")]).then(()=>setTimeout(startPass1,700));
+    setStatus("Not that one. The correct spot is outlined. The pass restarts.","miss"); r1.idx=-1; playSeq([no()]).then(()=>setTimeout(startPass1,700));
   }
 }
 
@@ -787,7 +797,7 @@ function check2(){
   } else {
     markMiss(s.id);
     r2.results.push("miss"); renderTally(r2.order.length,r2.results);
-    setStatus("Not quite. It is spelled: "+s.name+". The pass restarts.","miss"); r2.idx=-1; $("nameInput").disabled=true; playSeq([ph("not-quite"),bare(s),ph("try-again")]).then(()=>setTimeout(startPass2,700));
+    setStatus("Not quite. It is spelled: "+s.name+". The pass restarts.","miss"); r2.idx=-1; $("nameInput").disabled=true; playSeq([itsThe(),bare(s),ph("try-again")]).then(()=>setTimeout(startPass2,700));
   }
 }
 
@@ -878,7 +888,7 @@ function click4(s){
   if(r4.idx<0||r4.clicked) return;
   const it=r4.order[r4.idx];
   if(s && s.id===it.s.id){ markHit(it.s.id); r4.clicked=true; flash(s.id,"ok"); $("r4hint").textContent="Right spot: "+it.s.name+". Now type the answer to the question."; setStatus("",""); $("clueInput").disabled=false; $("clueInput").placeholder="Type your answer, then press Enter"; $("check4").disabled=false; $("clueInput").focus(); }
-  else { markMiss(it.s.id); r4.clicked=true; r4.results.push("miss"); renderTally(r4.order.length,r4.results); if(it.s.frame!==frameId) setFrame(it.s.frame); flash(it.s.id,"miss",2400); $("ans4").textContent="Answer: "+factAnswer(it.f); setStatus("Not that one. It is the "+it.s.name+".","miss"); playSeq([ph("it-is-the"),bare(it.s)]).then(()=>setTimeout(next4,900)); }
+  else { markMiss(it.s.id); r4.clicked=true; r4.results.push("miss"); renderTally(r4.order.length,r4.results); if(it.s.frame!==frameId) setFrame(it.s.frame); flash(it.s.id,"miss",2400); $("ans4").textContent="Answer: "+factAnswer(it.f); setStatus("Not that one. It is the "+it.s.name+".","miss"); playSeq([itsThe(),bare(it.s)]).then(()=>setTimeout(next4,900)); }
 }
 function check4(){
   const it=r4.order[r4.idx]; if(!r4.clicked) return;
