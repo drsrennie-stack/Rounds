@@ -203,6 +203,7 @@ pre{white-space:pre-wrap;font-size:12px;background:var(--tint);padding:10px;bord
 @media (prefers-reduced-motion:reduce){ *{transition:none !important;animation:none !important} }
 .factrow{border:1px solid #d9dde3;border-radius:10px;padding:10px 12px;margin:8px 0}.factrow label{margin-top:6px}
 .checklist{list-style:none;margin:0 0 8px;padding:0}.checklist li{padding:6px 8px;border-radius:8px;display:flex}.checklist li label{display:flex;gap:8px;align-items:center;cursor:pointer;width:100%}.checklist li .n{font-weight:800;color:#8B2E2E;min-width:22px}.checklist li.hot{background:#EDF1F3}.checklist li.flag .nm{color:#B3261E;font-weight:700}.checklist small{color:#5b6670}
+#clueInput:disabled{background:#F1F3F5;color:#5b6670;border-style:dashed;cursor:not-allowed}#clueInput::placeholder{color:#6b7580}
 </style>
 </head>
 <body>
@@ -842,7 +843,7 @@ function round4(){
   if(!items.length){ body.innerHTML='<p>No clues have been written for this set yet.</p>'; unlock(4); return; }
   body.innerHTML='<div class="prompt" id="clueText" aria-live="polite">Press Start</div>'
     +'<p class="small" id="r4hint">First click the structure the clue describes.</p>'
-    +'<label for="clueInput">Then type the answer</label><div class="inline"><input type="text" id="clueInput" autocomplete="off" autocapitalize="off" spellcheck="false" disabled></div><div class="cap" id="ans4"></div>'
+    +'<label for="clueInput">Then type the answer</label><div class="inline"><input type="text" id="clueInput" autocomplete="off" autocapitalize="off" spellcheck="false" disabled placeholder="Click the structure on the image first"></div><div class="cap" id="ans4"></div>'
     +'<div class="tally" id="tally"></div>'
     +'<div class="row"><button class="btn" id="start4">Start</button><button class="btn ghost" id="replay4">Hear it again</button><button class="btn ghost" id="check4" disabled>Check</button></div>';
   hint.textContent="Listen to the clue, then click the structure it describes.";
@@ -858,14 +859,14 @@ function round4(){
 }
 function askClue(){
   const it=r4.order[r4.idx]; r4.clicked=false; clearCls("show"); clearCls("ok");
-  $("clueText").textContent=it.f.q; $("r4hint").textContent="First click the structure the clue describes.";
-  $("clueInput").disabled=true; $("clueInput").value=""; $("check4").disabled=true; $("ans4").textContent="";
+  $("clueText").textContent=it.f.q; $("r4hint").textContent="Step 1: click the structure the clue describes. The answer box opens once you have it.";
+  $("clueInput").disabled=true; $("clueInput").value=""; $("clueInput").placeholder="Click the structure on the image first"; $("check4").disabled=true; $("ans4").textContent="";
   sayClue(it.s,it.i,it.f);
 }
 function click4(s){
   if(r4.idx<0||r4.clicked) return;
   const it=r4.order[r4.idx];
-  if(s && s.id===it.s.id){ markHit(it.s.id); r4.clicked=true; flash(s.id,"ok"); $("r4hint").textContent="Right spot: "+it.s.name+". Now type the answer to the question."; setStatus("",""); $("clueInput").disabled=false; $("check4").disabled=false; $("clueInput").focus(); }
+  if(s && s.id===it.s.id){ markHit(it.s.id); r4.clicked=true; flash(s.id,"ok"); $("r4hint").textContent="Right spot: "+it.s.name+". Now type the answer to the question."; setStatus("",""); $("clueInput").disabled=false; $("clueInput").placeholder="Type your answer, then press Enter"; $("check4").disabled=false; $("clueInput").focus(); }
   else { markMiss(it.s.id); r4.clicked=true; r4.results.push("miss"); renderTally(r4.order.length,r4.results); if(it.s.frame!==frameId) setFrame(it.s.frame); flash(it.s.id,"miss",2400); $("ans4").textContent="Answer: "+factAnswer(it.f); setStatus("Not that one. It is the "+it.s.name+".","miss"); playSeq([ph("it-is-the"),bare(it.s)]).then(()=>setTimeout(next4,900)); }
 }
 function check4(){
