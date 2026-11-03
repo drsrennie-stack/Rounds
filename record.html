@@ -64,21 +64,6 @@ footer{max-width:1100px;margin:0 auto;padding:0 24px 40px;color:var(--ink-soft);
 </style>
 </head>
 <body>
-<div id="gate" class="gate" role="dialog" aria-modal="true" aria-labelledby="gateH">
-<style>.gate{position:fixed;inset:0;z-index:99999;background:#02050F;color:#fff;display:flex;align-items:center;justify-content:center;padding:24px;font-family:"Plus Jakarta Sans","DM Sans",system-ui,sans-serif}.gate.hide{display:none}.gate form{width:min(420px,100%)}.gate .eb{font:600 12px/1 "DM Sans",system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#C9A24A;margin:0 0 14px}.gate h1{font-size:34px;font-weight:800;margin:0 0 8px;line-height:1.1}.gate h1 i{font-style:normal;display:inline-block;width:12px;height:12px;border-radius:50%;background:#7A1F2B;margin-left:6px;vertical-align:baseline}.gate p{color:#C9CED6;margin:0 0 22px;font-size:16px;line-height:1.5}.gate label{display:block;font-size:14px;margin-bottom:8px}.gate input{width:100%;box-sizing:border-box;font:inherit;font-size:18px;padding:12px 14px;border:1px solid #C9A24A;border-radius:10px;background:#0B1120;color:#fff}.gate input:focus{outline:3px solid #C9A24A;outline-offset:2px}.gate button{margin-top:14px;font:700 13px/1 inherit;letter-spacing:.14em;text-transform:uppercase;padding:14px 22px;border:0;border-radius:999px;background:#7A1F2B;color:#fff;cursor:pointer}.gate button:focus-visible{outline:3px solid #C9A24A;outline-offset:2px}.gate .err{color:#F0B9C0;min-height:1.4em;margin-top:10px;font-size:14px}</style>
-<form id="gateForm" autocomplete="off">
-<p class="eb">Instructor preview</p>
-<h1 id="gateH">Rounds<i aria-hidden="true"></i></h1>
-<p>Rounds is being checked before it opens to students. Enter the instructor password to continue.</p>
-<label for="gatePw">Password</label>
-<input id="gatePw" type="password" autocapitalize="off" autocomplete="off">
-<button type="submit">Open</button>
-<div id="gateErr" class="err" aria-live="polite"></div>
-</form>
-<script>(function(){var KEY="rounds:instructor",OK="medic",g=document.getElementById("gate");try{if(localStorage.getItem(KEY)===OK){g.classList.add("hide");return;}}catch(e){}
-document.getElementById("gateForm").addEventListener("submit",function(e){e.preventDefault();var v=document.getElementById("gatePw").value.trim().toLowerCase();if(v===OK){try{localStorage.setItem(KEY,OK);}catch(x){}g.classList.add("hide");}else{document.getElementById("gateErr").textContent="That is not the password.";}});
-setTimeout(function(){if(!g.classList.contains("hide"))document.getElementById("gatePw").focus();},50);})();</script>
-</div>
 
 <header class="band"><div class="wrap">
   <div class="eyebrow">BIO 004 · Human Anatomy</div>
