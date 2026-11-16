@@ -1,0 +1,221 @@
+{
+ "id": "bonet-05",
+ "title": "Fibrocartilage",
+ "course": "BIO 004",
+ "group": "Cartilage and bone tissue",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/bonet-05.jpg",
+   "width": 1360,
+   "height": 800
+  }
+ ],
+ "structures": [
+  {
+   "id": "lacuna-with-chondrocyte",
+   "name": "Lacuna with chondrocyte",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1022,
+      157
+     ],
+     [
+      1019,
+      168
+     ],
+     [
+      1011,
+      176
+     ],
+     [
+      1000,
+      179
+     ],
+     [
+      989,
+      176
+     ],
+     [
+      981,
+      168
+     ],
+     [
+      978,
+      157
+     ],
+     [
+      981,
+      146
+     ],
+     [
+      989,
+      138
+     ],
+     [
+      1000,
+      135
+     ],
+     [
+      1011,
+      138
+     ],
+     [
+      1019,
+      146
+     ]
+    ]
+   ],
+   "anchor": [
+    1000,
+    157
+   ],
+   "label": [
+    1166,
+    160
+   ],
+   "facts": []
+  },
+  {
+   "id": "collagen-fibers",
+   "name": "Collagen fibers",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      824,
+      520
+     ],
+     [
+      821,
+      531
+     ],
+     [
+      813,
+      539
+     ],
+     [
+      802,
+      542
+     ],
+     [
+      791,
+      539
+     ],
+     [
+      783,
+      531
+     ],
+     [
+      780,
+      520
+     ],
+     [
+      783,
+      509
+     ],
+     [
+      791,
+      501
+     ],
+     [
+      802,
+      498
+     ],
+     [
+      813,
+      501
+     ],
+     [
+      821,
+      509
+     ]
+    ]
+   ],
+   "anchor": [
+    802,
+    520
+   ],
+   "label": [
+    1231,
+    402
+   ],
+   "facts": []
+  },
+  {
+   "id": "extracellular-matrix",
+   "name": "Extracellular matrix",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      549,
+      702
+     ],
+     [
+      546,
+      713
+     ],
+     [
+      538,
+      721
+     ],
+     [
+      527,
+      724
+     ],
+     [
+      516,
+      721
+     ],
+     [
+      508,
+      713
+     ],
+     [
+      505,
+      702
+     ],
+     [
+      508,
+      691
+     ],
+     [
+      516,
+      683
+     ],
+     [
+      527,
+      680
+     ],
+     [
+      538,
+      683
+     ],
+     [
+      546,
+      691
+     ]
+    ]
+   ],
+   "anchor": [
+    527,
+    702
+   ],
+   "label": [
+    1188,
+    617
+   ],
+   "facts": []
+  }
+ ]
+}

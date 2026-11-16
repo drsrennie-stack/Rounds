@@ -1,0 +1,153 @@
+{
+ "id": "vess-03",
+ "title": "Large muscular artery (slide)",
+ "course": "BIO 004",
+ "group": "Blood vessel slides",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/vess-03.jpg",
+   "width": 1360,
+   "height": 648
+  }
+ ],
+ "structures": [
+  {
+   "id": "tunica-externa",
+   "name": "Tunica externa",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      189,
+      182
+     ],
+     [
+      187,
+      191
+     ],
+     [
+      180,
+      198
+     ],
+     [
+      171,
+      200
+     ],
+     [
+      162,
+      198
+     ],
+     [
+      155,
+      191
+     ],
+     [
+      153,
+      182
+     ],
+     [
+      155,
+      173
+     ],
+     [
+      162,
+      166
+     ],
+     [
+      171,
+      164
+     ],
+     [
+      180,
+      166
+     ],
+     [
+      187,
+      173
+     ]
+    ]
+   ],
+   "anchor": [
+    171,
+    182
+   ],
+   "label": [
+    85,
+    159
+   ],
+   "facts": []
+  },
+  {
+   "id": "tunica-media",
+   "name": "Tunica media",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      189,
+      189
+     ],
+     [
+      187,
+      198
+     ],
+     [
+      180,
+      205
+     ],
+     [
+      171,
+      207
+     ],
+     [
+      162,
+      205
+     ],
+     [
+      155,
+      198
+     ],
+     [
+      153,
+      189
+     ],
+     [
+      155,
+      180
+     ],
+     [
+      162,
+      173
+     ],
+     [
+      171,
+      171
+     ],
+     [
+      180,
+      173
+     ],
+     [
+      187,
+      180
+     ]
+    ]
+   ],
+   "anchor": [
+    171,
+    189
+   ],
+   "label": [
+    77,
+    373
+   ],
+   "facts": []
+  }
+ ]
+}

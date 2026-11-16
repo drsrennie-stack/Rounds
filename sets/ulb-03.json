@@ -1,0 +1,289 @@
+{
+ "id": "ulb-03",
+ "title": "Joints of the pectoral girdle (model)",
+ "course": "BIO 004",
+ "group": "Pectoral girdle",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/ulb-03.jpg",
+   "width": 1080,
+   "height": 985
+  }
+ ],
+ "structures": [
+  {
+   "id": "acromioclavicular-joint",
+   "name": "Acromioclavicular joint",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      308,
+      355
+     ],
+     [
+      304,
+      368
+     ],
+     [
+      294,
+      378
+     ],
+     [
+      281,
+      382
+     ],
+     [
+      268,
+      378
+     ],
+     [
+      258,
+      368
+     ],
+     [
+      254,
+      355
+     ],
+     [
+      258,
+      342
+     ],
+     [
+      268,
+      332
+     ],
+     [
+      281,
+      328
+     ],
+     [
+      294,
+      332
+     ],
+     [
+      304,
+      342
+     ]
+    ]
+   ],
+   "anchor": [
+    281,
+    355
+   ],
+   "label": [
+    162,
+    237
+   ],
+   "facts": []
+  },
+  {
+   "id": "sternoclavicular-joint",
+   "name": "Sternoclavicular joint",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      714,
+      390
+     ],
+     [
+      710,
+      404
+     ],
+     [
+      700,
+      413
+     ],
+     [
+      687,
+      417
+     ],
+     [
+      674,
+      413
+     ],
+     [
+      664,
+      404
+     ],
+     [
+      660,
+      390
+     ],
+     [
+      664,
+      376
+     ],
+     [
+      674,
+      367
+     ],
+     [
+      687,
+      363
+     ],
+     [
+      700,
+      367
+     ],
+     [
+      710,
+      376
+     ]
+    ]
+   ],
+   "anchor": [
+    687,
+    390
+   ],
+   "label": [
+    901,
+    261
+   ],
+   "facts": []
+  },
+  {
+   "id": "manubriosternal-joint",
+   "name": "Manubriosternal joint",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      758,
+      508
+     ],
+     [
+      754,
+      522
+     ],
+     [
+      744,
+      531
+     ],
+     [
+      731,
+      535
+     ],
+     [
+      718,
+      531
+     ],
+     [
+      708,
+      522
+     ],
+     [
+      704,
+      508
+     ],
+     [
+      708,
+      494
+     ],
+     [
+      718,
+      485
+     ],
+     [
+      731,
+      481
+     ],
+     [
+      744,
+      485
+     ],
+     [
+      754,
+      494
+     ]
+    ]
+   ],
+   "anchor": [
+    731,
+    508
+   ],
+   "label": [
+    1010,
+    376
+   ],
+   "facts": []
+  },
+  {
+   "id": "glenohumeral-joint",
+   "name": "Glenohumeral joint",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      331,
+      449
+     ],
+     [
+      327,
+      462
+     ],
+     [
+      318,
+      472
+     ],
+     [
+      304,
+      476
+     ],
+     [
+      290,
+      472
+     ],
+     [
+      281,
+      462
+     ],
+     [
+      277,
+      449
+     ],
+     [
+      281,
+      436
+     ],
+     [
+      290,
+      426
+     ],
+     [
+      304,
+      422
+     ],
+     [
+      318,
+      426
+     ],
+     [
+      327,
+      436
+     ]
+    ]
+   ],
+   "anchor": [
+    304,
+    449
+   ],
+   "label": [
+    119,
+    383
+   ],
+   "facts": []
+  }
+ ]
+}

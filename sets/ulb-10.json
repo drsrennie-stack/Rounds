@@ -1,0 +1,85 @@
+{
+ "id": "ulb-10",
+ "title": "Humerus, posterior view: distal end",
+ "course": "BIO 004",
+ "group": "Humerus",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/ulb-10.jpg",
+   "width": 393,
+   "height": 821
+  }
+ ],
+ "structures": [
+  {
+   "id": "olecranon-fossa",
+   "name": "Olecranon fossa",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      297,
+      709
+     ],
+     [
+      295,
+      717
+     ],
+     [
+      289,
+      723
+     ],
+     [
+      281,
+      725
+     ],
+     [
+      273,
+      723
+     ],
+     [
+      267,
+      717
+     ],
+     [
+      265,
+      709
+     ],
+     [
+      267,
+      701
+     ],
+     [
+      273,
+      695
+     ],
+     [
+      281,
+      693
+     ],
+     [
+      289,
+      695
+     ],
+     [
+      295,
+      701
+     ]
+    ]
+   ],
+   "anchor": [
+    281,
+    709
+   ],
+   "label": [
+    36,
+    590
+   ],
+   "facts": []
+  }
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "id": "bonet-01",
+ "title": "Hyaline cartilage",
+ "course": "BIO 004",
+ "group": "Cartilage and bone tissue",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/bonet-01.jpg",
+   "width": 1360,
+   "height": 800
+  }
+ ],
+ "structures": [
+  {
+   "id": "perichondrium",
+   "name": "Perichondrium",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      525,
+      176
+     ],
+     [
+      522,
+      187
+     ],
+     [
+      514,
+      195
+     ],
+     [
+      503,
+      198
+     ],
+     [
+      492,
+      195
+     ],
+     [
+      484,
+      187
+     ],
+     [
+      481,
+      176
+     ],
+     [
+      484,
+      165
+     ],
+     [
+      492,
+      157
+     ],
+     [
+      503,
+      154
+     ],
+     [
+      514,
+      157
+     ],
+     [
+      522,
+      165
+     ]
+    ]
+   ],
+   "anchor": [
+    503,
+    176
+   ],
+   "label": [
+    598,
+    112
+   ],
+   "facts": []
+  },
+  {
+   "id": "lacuna-with-chondrocyte",
+   "name": "Lacuna with chondrocyte",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1102,
+      365
+     ],
+     [
+      1099,
+      376
+     ],
+     [
+      1091,
+      384
+     ],
+     [
+      1080,
+      387
+     ],
+     [
+      1069,
+      384
+     ],
+     [
+      1061,
+      376
+     ],
+     [
+      1058,
+      365
+     ],
+     [
+      1061,
+      354
+     ],
+     [
+      1069,
+      346
+     ],
+     [
+      1080,
+      343
+     ],
+     [
+      1091,
+      346
+     ],
+     [
+      1099,
+      354
+     ]
+    ]
+   ],
+   "anchor": [
+    1080,
+    365
+   ],
+   "label": [
+    996,
+    218
+   ],
+   "facts": []
+  },
+  {
+   "id": "extracellular-matrix",
+   "name": "Extracellular matrix",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      780,
+      443
+     ],
+     [
+      777,
+      454
+     ],
+     [
+      769,
+      462
+     ],
+     [
+      758,
+      465
+     ],
+     [
+      747,
+      462
+     ],
+     [
+      739,
+      454
+     ],
+     [
+      736,
+      443
+     ],
+     [
+      739,
+      432
+     ],
+     [
+      747,
+      424
+     ],
+     [
+      758,
+      421
+     ],
+     [
+      769,
+      424
+     ],
+     [
+      777,
+      432
+     ]
+    ]
+   ],
+   "anchor": [
+    758,
+    443
+   ],
+   "label": [
+    644,
+    232
+   ],
+   "facts": []
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "id": "skel-20",
+ "title": "Intervertebral disc",
+ "course": "BIO 004",
+ "group": "Vertebral column",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/skel-20.jpg",
+   "width": 1240,
+   "height": 1050
+  }
+ ],
+ "structures": [
+  {
+   "id": "annulus-fibrosus",
+   "name": "Annulus fibrosus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      508,
+      675
+     ],
+     [
+      504,
+      690
+     ],
+     [
+      494,
+      700
+     ],
+     [
+      479,
+      704
+     ],
+     [
+      464,
+      700
+     ],
+     [
+      454,
+      690
+     ],
+     [
+      450,
+      675
+     ],
+     [
+      454,
+      660
+     ],
+     [
+      464,
+      650
+     ],
+     [
+      479,
+      646
+     ],
+     [
+      494,
+      650
+     ],
+     [
+      504,
+      660
+     ]
+    ]
+   ],
+   "anchor": [
+    479,
+    675
+   ],
+   "label": [
+    117,
+    330
+   ],
+   "facts": []
+  },
+  {
+   "id": "nucleus-pulposus",
+   "name": "Nucleus pulposus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      303,
+      756
+     ],
+     [
+      299,
+      770
+     ],
+     [
+      288,
+      781
+     ],
+     [
+      274,
+      785
+     ],
+     [
+      260,
+      781
+     ],
+     [
+      249,
+      770
+     ],
+     [
+      245,
+      756
+     ],
+     [
+      249,
+      742
+     ],
+     [
+      260,
+      731
+     ],
+     [
+      274,
+      727
+     ],
+     [
+      288,
+      731
+     ],
+     [
+      299,
+      742
+     ]
+    ]
+   ],
+   "anchor": [
+    274,
+    756
+   ],
+   "label": [
+    272,
+    758
+   ],
+   "facts": []
+  }
+ ]
+}
