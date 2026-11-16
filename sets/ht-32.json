@@ -1,0 +1,425 @@
+{
+ "id": "ht-32",
+ "title": "Conduction system",
+ "course": "BIO 004",
+ "group": "Heart, clear model",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/ht-32.jpg",
+   "width": 1447,
+   "height": 964
+  }
+ ],
+ "structures": [
+  {
+   "id": "sinoatrial-sa-node-intrinsic-rate-60-to-100-bpm",
+   "name": "Sinoatrial (SA) node: intrinsic rate 60 to 100 bpm",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      387,
+      262
+     ],
+     [
+      384,
+      275
+     ],
+     [
+      374,
+      285
+     ],
+     [
+      361,
+      288
+     ],
+     [
+      348,
+      285
+     ],
+     [
+      338,
+      275
+     ],
+     [
+      335,
+      262
+     ],
+     [
+      338,
+      249
+     ],
+     [
+      348,
+      239
+     ],
+     [
+      361,
+      236
+     ],
+     [
+      374,
+      239
+     ],
+     [
+      384,
+      249
+     ]
+    ]
+   ],
+   "anchor": [
+    361,
+    262
+   ],
+   "label": [
+    458,
+    258
+   ],
+   "facts": []
+  },
+  {
+   "id": "atrioventricular-av-node-intrinsic-rate-40-to-60-bpm",
+   "name": "Atrioventricular (AV) node: intrinsic rate 40 to 60 bpm",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      384,
+      444
+     ],
+     [
+      381,
+      457
+     ],
+     [
+      371,
+      467
+     ],
+     [
+      358,
+      470
+     ],
+     [
+      345,
+      467
+     ],
+     [
+      335,
+      457
+     ],
+     [
+      332,
+      444
+     ],
+     [
+      335,
+      431
+     ],
+     [
+      345,
+      421
+     ],
+     [
+      358,
+      418
+     ],
+     [
+      371,
+      421
+     ],
+     [
+      381,
+      431
+     ]
+    ]
+   ],
+   "anchor": [
+    358,
+    444
+   ],
+   "label": [
+    447,
+    452
+   ],
+   "facts": []
+  },
+  {
+   "id": "right-bundle-branch-no-intrinsic-rate-carries-the-impulse-only",
+   "name": "Right bundle branch: no intrinsic rate (carries the impulse only)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      384,
+      597
+     ],
+     [
+      381,
+      610
+     ],
+     [
+      371,
+      620
+     ],
+     [
+      358,
+      623
+     ],
+     [
+      345,
+      620
+     ],
+     [
+      335,
+      610
+     ],
+     [
+      332,
+      597
+     ],
+     [
+      335,
+      584
+     ],
+     [
+      345,
+      574
+     ],
+     [
+      358,
+      571
+     ],
+     [
+      371,
+      574
+     ],
+     [
+      381,
+      584
+     ]
+    ]
+   ],
+   "anchor": [
+    358,
+    597
+   ],
+   "label": [
+    398,
+    622
+   ],
+   "facts": []
+  },
+  {
+   "id": "bundle-of-his-intrinsic-rate-40-to-60-bpm",
+   "name": "Bundle of His: intrinsic rate 40 to 60 bpm",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1043,
+      424
+     ],
+     [
+      1040,
+      437
+     ],
+     [
+      1030,
+      447
+     ],
+     [
+      1017,
+      450
+     ],
+     [
+      1004,
+      447
+     ],
+     [
+      994,
+      437
+     ],
+     [
+      991,
+      424
+     ],
+     [
+      994,
+      411
+     ],
+     [
+      1004,
+      401
+     ],
+     [
+      1017,
+      398
+     ],
+     [
+      1030,
+      401
+     ],
+     [
+      1040,
+      411
+     ]
+    ]
+   ],
+   "anchor": [
+    1017,
+    424
+   ],
+   "label": [
+    1067,
+    411
+   ],
+   "facts": []
+  },
+  {
+   "id": "left-bundle-branch-no-intrinsic-rate-carries-the-impulse-only",
+   "name": "Left bundle branch: no intrinsic rate (carries the impulse only)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1058,
+      557
+     ],
+     [
+      1055,
+      570
+     ],
+     [
+      1045,
+      580
+     ],
+     [
+      1032,
+      583
+     ],
+     [
+      1019,
+      580
+     ],
+     [
+      1009,
+      570
+     ],
+     [
+      1006,
+      557
+     ],
+     [
+      1009,
+      544
+     ],
+     [
+      1019,
+      534
+     ],
+     [
+      1032,
+      531
+     ],
+     [
+      1045,
+      534
+     ],
+     [
+      1055,
+      544
+     ]
+    ]
+   ],
+   "anchor": [
+    1032,
+    557
+   ],
+   "label": [
+    1067,
+    602
+   ],
+   "facts": []
+  },
+  {
+   "id": "purkinje-fibers-20-to-40-bpm",
+   "name": "Purkinje fibers: 20 to 40 bpm",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1032,
+      736
+     ],
+     [
+      1029,
+      749
+     ],
+     [
+      1019,
+      759
+     ],
+     [
+      1006,
+      762
+     ],
+     [
+      993,
+      759
+     ],
+     [
+      983,
+      749
+     ],
+     [
+      980,
+      736
+     ],
+     [
+      983,
+      723
+     ],
+     [
+      993,
+      713
+     ],
+     [
+      1006,
+      710
+     ],
+     [
+      1019,
+      713
+     ],
+     [
+      1029,
+      723
+     ]
+    ]
+   ],
+   "anchor": [
+    1006,
+    736
+   ],
+   "label": [
+    1094,
+    734
+   ],
+   "facts": []
+  }
+ ]
+}

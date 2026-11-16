@@ -1,0 +1,153 @@
+{
+ "id": "bk-31",
+ "title": "Intercostal muscles (cadaver)",
+ "course": "BIO 004",
+ "group": "Back and thorax muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/bk-31.jpg",
+   "width": 882,
+   "height": 677
+  }
+ ],
+ "structures": [
+  {
+   "id": "external-intercostals",
+   "name": "External intercostals",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      62,
+      199
+     ],
+     [
+      60,
+      208
+     ],
+     [
+      53,
+      215
+     ],
+     [
+      44,
+      217
+     ],
+     [
+      35,
+      215
+     ],
+     [
+      28,
+      208
+     ],
+     [
+      26,
+      199
+     ],
+     [
+      28,
+      190
+     ],
+     [
+      35,
+      183
+     ],
+     [
+      44,
+      181
+     ],
+     [
+      53,
+      183
+     ],
+     [
+      60,
+      190
+     ]
+    ]
+   ],
+   "anchor": [
+    44,
+    199
+   ],
+   "label": [
+    40,
+    198
+   ],
+   "facts": []
+  },
+  {
+   "id": "internal-intercostals",
+   "name": "Internal intercostals",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      396,
+      214
+     ],
+     [
+      394,
+      223
+     ],
+     [
+      387,
+      230
+     ],
+     [
+      378,
+      232
+     ],
+     [
+      369,
+      230
+     ],
+     [
+      362,
+      223
+     ],
+     [
+      360,
+      214
+     ],
+     [
+      362,
+      205
+     ],
+     [
+      369,
+      198
+     ],
+     [
+      378,
+      196
+     ],
+     [
+      387,
+      198
+     ],
+     [
+      394,
+      205
+     ]
+    ]
+   ],
+   "anchor": [
+    378,
+    214
+   ],
+   "label": [
+    480,
+    637
+   ],
+   "facts": []
+  }
+ ]
+}

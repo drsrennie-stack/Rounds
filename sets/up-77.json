@@ -1,0 +1,153 @@
+{
+ "id": "up-77",
+ "title": "Forearm, anterior: superficial flexors (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-77.jpg",
+   "width": 351,
+   "height": 785
+  }
+ ],
+ "structures": [
+  {
+   "id": "flexor-carpi-radialis",
+   "name": "Flexor carpi radialis",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      125,
+      289
+     ],
+     [
+      123,
+      297
+     ],
+     [
+      117,
+      303
+     ],
+     [
+      109,
+      305
+     ],
+     [
+      101,
+      303
+     ],
+     [
+      95,
+      297
+     ],
+     [
+      93,
+      289
+     ],
+     [
+      95,
+      281
+     ],
+     [
+      101,
+      275
+     ],
+     [
+      109,
+      273
+     ],
+     [
+      117,
+      275
+     ],
+     [
+      123,
+      281
+     ]
+    ]
+   ],
+   "anchor": [
+    109,
+    289
+   ],
+   "label": [
+    106,
+    290
+   ],
+   "facts": []
+  },
+  {
+   "id": "flexor-carpi-ulnaris-tendon",
+   "name": "Flexor carpi ulnaris (tendon)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      60,
+      485
+     ],
+     [
+      58,
+      493
+     ],
+     [
+      52,
+      499
+     ],
+     [
+      44,
+      501
+     ],
+     [
+      36,
+      499
+     ],
+     [
+      30,
+      493
+     ],
+     [
+      28,
+      485
+     ],
+     [
+      30,
+      477
+     ],
+     [
+      36,
+      471
+     ],
+     [
+      44,
+      469
+     ],
+     [
+      52,
+      471
+     ],
+     [
+      58,
+      477
+     ]
+    ]
+   ],
+   "anchor": [
+    44,
+    485
+   ],
+   "label": [
+    40,
+    484
+   ],
+   "facts": []
+  }
+ ]
+}

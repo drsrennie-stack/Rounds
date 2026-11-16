@@ -1,0 +1,357 @@
+{
+ "id": "up-81",
+ "title": "Forearm, posterior: superficial extensors (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-81.jpg",
+   "width": 436,
+   "height": 785
+  }
+ ],
+ "structures": [
+  {
+   "id": "brachioradialis",
+   "name": "Brachioradialis",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      90,
+      106
+     ],
+     [
+      88,
+      114
+     ],
+     [
+      82,
+      120
+     ],
+     [
+      74,
+      122
+     ],
+     [
+      66,
+      120
+     ],
+     [
+      60,
+      114
+     ],
+     [
+      58,
+      106
+     ],
+     [
+      60,
+      98
+     ],
+     [
+      66,
+      92
+     ],
+     [
+      74,
+      90
+     ],
+     [
+      82,
+      92
+     ],
+     [
+      88,
+      98
+     ]
+    ]
+   ],
+   "anchor": [
+    74,
+    106
+   ],
+   "label": [
+    70,
+    105
+   ],
+   "facts": []
+  },
+  {
+   "id": "extensor-carpi-ulnaris",
+   "name": "Extensor carpi ulnaris",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      243,
+      281
+     ],
+     [
+      241,
+      289
+     ],
+     [
+      235,
+      295
+     ],
+     [
+      227,
+      297
+     ],
+     [
+      219,
+      295
+     ],
+     [
+      213,
+      289
+     ],
+     [
+      211,
+      281
+     ],
+     [
+      213,
+      273
+     ],
+     [
+      219,
+      267
+     ],
+     [
+      227,
+      265
+     ],
+     [
+      235,
+      267
+     ],
+     [
+      241,
+      273
+     ]
+    ]
+   ],
+   "anchor": [
+    227,
+    281
+   ],
+   "label": [
+    386,
+    219
+   ],
+   "facts": []
+  },
+  {
+   "id": "extensor-carpi-radialis-longus",
+   "name": "Extensor carpi radialis longus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      59,
+      235
+     ],
+     [
+      57,
+      243
+     ],
+     [
+      51,
+      249
+     ],
+     [
+      43,
+      251
+     ],
+     [
+      35,
+      249
+     ],
+     [
+      29,
+      243
+     ],
+     [
+      27,
+      235
+     ],
+     [
+      29,
+      227
+     ],
+     [
+      35,
+      221
+     ],
+     [
+      43,
+      219
+     ],
+     [
+      51,
+      221
+     ],
+     [
+      57,
+      227
+     ]
+    ]
+   ],
+   "anchor": [
+    43,
+    235
+   ],
+   "label": [
+    40,
+    236
+   ],
+   "facts": []
+  },
+  {
+   "id": "extensor-digitorum",
+   "name": "Extensor digitorum",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      408,
+      339
+     ],
+     [
+      406,
+      347
+     ],
+     [
+      400,
+      353
+     ],
+     [
+      392,
+      355
+     ],
+     [
+      384,
+      353
+     ],
+     [
+      378,
+      347
+     ],
+     [
+      376,
+      339
+     ],
+     [
+      378,
+      331
+     ],
+     [
+      384,
+      325
+     ],
+     [
+      392,
+      323
+     ],
+     [
+      400,
+      325
+     ],
+     [
+      406,
+      331
+     ]
+    ]
+   ],
+   "anchor": [
+    392,
+    339
+   ],
+   "label": [
+    396,
+    338
+   ],
+   "facts": []
+  },
+  {
+   "id": "extensor-carpi-radialis-brevis",
+   "name": "Extensor carpi radialis brevis",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      105,
+      363
+     ],
+     [
+      103,
+      371
+     ],
+     [
+      97,
+      377
+     ],
+     [
+      89,
+      379
+     ],
+     [
+      81,
+      377
+     ],
+     [
+      75,
+      371
+     ],
+     [
+      73,
+      363
+     ],
+     [
+      75,
+      355
+     ],
+     [
+      81,
+      349
+     ],
+     [
+      89,
+      347
+     ],
+     [
+      97,
+      349
+     ],
+     [
+      103,
+      355
+     ]
+    ]
+   ],
+   "anchor": [
+    89,
+    363
+   ],
+   "label": [
+    84,
+    362
+   ],
+   "facts": []
+  }
+ ]
+}

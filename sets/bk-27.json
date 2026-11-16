@@ -1,0 +1,221 @@
+{
+ "id": "bk-27",
+ "title": "Thorax, anterior: pectoral region (cadaver)",
+ "course": "BIO 004",
+ "group": "Back and thorax muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/bk-27.jpg",
+   "width": 885,
+   "height": 768
+  }
+ ],
+ "structures": [
+  {
+   "id": "deltoid",
+   "name": "Deltoid",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      363,
+      106
+     ],
+     [
+      360,
+      116
+     ],
+     [
+      352,
+      124
+     ],
+     [
+      342,
+      127
+     ],
+     [
+      332,
+      124
+     ],
+     [
+      324,
+      116
+     ],
+     [
+      321,
+      106
+     ],
+     [
+      324,
+      96
+     ],
+     [
+      332,
+      88
+     ],
+     [
+      342,
+      85
+     ],
+     [
+      352,
+      88
+     ],
+     [
+      360,
+      95
+     ]
+    ]
+   ],
+   "anchor": [
+    342,
+    106
+   ],
+   "label": [
+    40,
+    83
+   ],
+   "facts": []
+  },
+  {
+   "id": "pectoralis-major",
+   "name": "Pectoralis major",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      116,
+      221
+     ],
+     [
+      113,
+      232
+     ],
+     [
+      106,
+      239
+     ],
+     [
+      95,
+      242
+     ],
+     [
+      84,
+      239
+     ],
+     [
+      77,
+      232
+     ],
+     [
+      74,
+      221
+     ],
+     [
+      77,
+      210
+     ],
+     [
+      84,
+      203
+     ],
+     [
+      95,
+      200
+     ],
+     [
+      105,
+      203
+     ],
+     [
+      113,
+      210
+     ]
+    ]
+   ],
+   "anchor": [
+    95,
+    221
+   ],
+   "label": [
+    91,
+    222
+   ],
+   "facts": []
+  },
+  {
+   "id": "serratus-anterior",
+   "name": "Serratus anterior",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      121,
+      399
+     ],
+     [
+      118,
+      410
+     ],
+     [
+      110,
+      417
+     ],
+     [
+      100,
+      420
+     ],
+     [
+      90,
+      417
+     ],
+     [
+      82,
+      410
+     ],
+     [
+      79,
+      399
+     ],
+     [
+      82,
+      388
+     ],
+     [
+      89,
+      381
+     ],
+     [
+      100,
+      378
+     ],
+     [
+      110,
+      381
+     ],
+     [
+      118,
+      388
+     ]
+    ]
+   ],
+   "anchor": [
+    100,
+    399
+   ],
+   "label": [
+    96,
+    398
+   ],
+   "facts": []
+  }
+ ]
+}

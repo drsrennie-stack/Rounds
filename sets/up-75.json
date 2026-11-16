@@ -1,0 +1,221 @@
+{
+ "id": "up-75",
+ "title": "Shoulder and arm, posterior (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-75.jpg",
+   "width": 478,
+   "height": 780
+  }
+ ],
+ "structures": [
+  {
+   "id": "deltoid",
+   "name": "Deltoid",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      242,
+      119
+     ],
+     [
+      240,
+      127
+     ],
+     [
+      234,
+      133
+     ],
+     [
+      226,
+      135
+     ],
+     [
+      218,
+      133
+     ],
+     [
+      212,
+      127
+     ],
+     [
+      210,
+      119
+     ],
+     [
+      212,
+      111
+     ],
+     [
+      218,
+      105
+     ],
+     [
+      226,
+      103
+     ],
+     [
+      234,
+      105
+     ],
+     [
+      240,
+      111
+     ]
+    ]
+   ],
+   "anchor": [
+    226,
+    119
+   ],
+   "label": [
+    40,
+    97
+   ],
+   "facts": []
+  },
+  {
+   "id": "triceps-brachii-lateral-head",
+   "name": "Triceps brachii, lateral head",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      75,
+      369
+     ],
+     [
+      73,
+      377
+     ],
+     [
+      67,
+      383
+     ],
+     [
+      59,
+      385
+     ],
+     [
+      51,
+      383
+     ],
+     [
+      45,
+      377
+     ],
+     [
+      43,
+      369
+     ],
+     [
+      45,
+      361
+     ],
+     [
+      51,
+      355
+     ],
+     [
+      59,
+      353
+     ],
+     [
+      67,
+      355
+     ],
+     [
+      73,
+      361
+     ]
+    ]
+   ],
+   "anchor": [
+    59,
+    369
+   ],
+   "label": [
+    55,
+    368
+   ],
+   "facts": []
+  },
+  {
+   "id": "triceps-brachii-long-head",
+   "name": "Triceps brachii, long head",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      448,
+      373
+     ],
+     [
+      446,
+      381
+     ],
+     [
+      440,
+      387
+     ],
+     [
+      432,
+      389
+     ],
+     [
+      424,
+      387
+     ],
+     [
+      418,
+      381
+     ],
+     [
+      416,
+      373
+     ],
+     [
+      418,
+      365
+     ],
+     [
+      424,
+      359
+     ],
+     [
+      432,
+      357
+     ],
+     [
+      440,
+      359
+     ],
+     [
+      446,
+      365
+     ]
+    ]
+   ],
+   "anchor": [
+    432,
+    373
+   ],
+   "label": [
+    436,
+    372
+   ],
+   "facts": []
+  }
+ ]
+}

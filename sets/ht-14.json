@@ -1,0 +1,153 @@
+{
+ "id": "ht-14",
+ "title": "Right ventricle opened",
+ "course": "BIO 004",
+ "group": "Heart, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/ht-14.jpg",
+   "width": 1258,
+   "height": 892
+  }
+ ],
+ "structures": [
+  {
+   "id": "chordae-tendineae",
+   "name": "Chordae tendineae",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      409,
+      684
+     ],
+     [
+      406,
+      696
+     ],
+     [
+      397,
+      705
+     ],
+     [
+      385,
+      708
+     ],
+     [
+      373,
+      705
+     ],
+     [
+      364,
+      696
+     ],
+     [
+      361,
+      684
+     ],
+     [
+      364,
+      672
+     ],
+     [
+      373,
+      663
+     ],
+     [
+      385,
+      660
+     ],
+     [
+      397,
+      663
+     ],
+     [
+      406,
+      672
+     ]
+    ]
+   ],
+   "anchor": [
+    385,
+    684
+   ],
+   "label": [
+    363,
+    728
+   ],
+   "facts": []
+  },
+  {
+   "id": "papillary-muscle",
+   "name": "Papillary muscle",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      463,
+      710
+     ],
+     [
+      460,
+      722
+     ],
+     [
+      451,
+      731
+     ],
+     [
+      439,
+      734
+     ],
+     [
+      427,
+      731
+     ],
+     [
+      418,
+      722
+     ],
+     [
+      415,
+      710
+     ],
+     [
+      418,
+      698
+     ],
+     [
+      427,
+      689
+     ],
+     [
+      439,
+      686
+     ],
+     [
+      451,
+      689
+     ],
+     [
+      460,
+      698
+     ]
+    ]
+   ],
+   "anchor": [
+    439,
+    710
+   ],
+   "label": [
+    387,
+    842
+   ],
+   "facts": []
+  }
+ ]
+}

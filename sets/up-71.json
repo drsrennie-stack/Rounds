@@ -1,0 +1,221 @@
+{
+ "id": "up-71",
+ "title": "Arm, anterior (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-71.jpg",
+   "width": 563,
+   "height": 763
+  }
+ ],
+ "structures": [
+  {
+   "id": "deltoid",
+   "name": "Deltoid",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      524,
+      83
+     ],
+     [
+      522,
+      91
+     ],
+     [
+      516,
+      97
+     ],
+     [
+      508,
+      99
+     ],
+     [
+      500,
+      97
+     ],
+     [
+      494,
+      91
+     ],
+     [
+      492,
+      83
+     ],
+     [
+      494,
+      75
+     ],
+     [
+      500,
+      69
+     ],
+     [
+      508,
+      67
+     ],
+     [
+      516,
+      69
+     ],
+     [
+      522,
+      75
+     ]
+    ]
+   ],
+   "anchor": [
+    508,
+    83
+   ],
+   "label": [
+    513,
+    82
+   ],
+   "facts": []
+  },
+  {
+   "id": "biceps-brachii-short-head",
+   "name": "Biceps brachii, short head",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      296,
+      255
+     ],
+     [
+      294,
+      263
+     ],
+     [
+      288,
+      269
+     ],
+     [
+      280,
+      271
+     ],
+     [
+      272,
+      269
+     ],
+     [
+      266,
+      263
+     ],
+     [
+      264,
+      255
+     ],
+     [
+      266,
+      247
+     ],
+     [
+      272,
+      241
+     ],
+     [
+      280,
+      239
+     ],
+     [
+      288,
+      241
+     ],
+     [
+      294,
+      247
+     ]
+    ]
+   ],
+   "anchor": [
+    280,
+    255
+   ],
+   "label": [
+    40,
+    202
+   ],
+   "facts": []
+  },
+  {
+   "id": "biceps-brachii-long-head",
+   "name": "Biceps brachii, long head",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      483,
+      337
+     ],
+     [
+      481,
+      345
+     ],
+     [
+      475,
+      351
+     ],
+     [
+      467,
+      353
+     ],
+     [
+      459,
+      351
+     ],
+     [
+      453,
+      345
+     ],
+     [
+      451,
+      337
+     ],
+     [
+      453,
+      329
+     ],
+     [
+      459,
+      323
+     ],
+     [
+      467,
+      321
+     ],
+     [
+      475,
+      323
+     ],
+     [
+      481,
+      329
+     ]
+    ]
+   ],
+   "anchor": [
+    467,
+    337
+   ],
+   "label": [
+    471,
+    336
+   ],
+   "facts": []
+  }
+ ]
+}

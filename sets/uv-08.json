@@ -1,0 +1,153 @@
+{
+ "id": "uv-08",
+ "title": "Root of the neck, anterior",
+ "course": "BIO 004",
+ "group": "Upper limb vessels and nerves, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/uv-08.jpg",
+   "width": 2302,
+   "height": 1100
+  }
+ ],
+ "structures": [
+  {
+   "id": "subclavian-artery",
+   "name": "Subclavian artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1906,
+      710
+     ],
+     [
+      1902,
+      725
+     ],
+     [
+      1891,
+      736
+     ],
+     [
+      1876,
+      740
+     ],
+     [
+      1861,
+      736
+     ],
+     [
+      1850,
+      725
+     ],
+     [
+      1846,
+      710
+     ],
+     [
+      1850,
+      695
+     ],
+     [
+      1861,
+      684
+     ],
+     [
+      1876,
+      680
+     ],
+     [
+      1891,
+      684
+     ],
+     [
+      1902,
+      695
+     ]
+    ]
+   ],
+   "anchor": [
+    1876,
+    710
+   ],
+   "label": [
+    1876,
+    712
+   ],
+   "facts": []
+  },
+  {
+   "id": "axillary-artery",
+   "name": "Axillary artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      823,
+      751
+     ],
+     [
+      819,
+      766
+     ],
+     [
+      808,
+      777
+     ],
+     [
+      793,
+      781
+     ],
+     [
+      778,
+      777
+     ],
+     [
+      767,
+      766
+     ],
+     [
+      763,
+      751
+     ],
+     [
+      767,
+      736
+     ],
+     [
+      778,
+      725
+     ],
+     [
+      793,
+      721
+     ],
+     [
+      808,
+      725
+     ],
+     [
+      819,
+      736
+     ]
+    ]
+   ],
+   "anchor": [
+    793,
+    751
+   ],
+   "label": [
+    386,
+    753
+   ],
+   "facts": []
+  }
+ ]
+}

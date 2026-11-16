@@ -1,0 +1,153 @@
+{
+ "id": "bk-23",
+ "title": "Back, posterior (cadaver)",
+ "course": "BIO 004",
+ "group": "Back and thorax muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/bk-23.jpg",
+   "width": 614,
+   "height": 770
+  }
+ ],
+ "structures": [
+  {
+   "id": "trapezius",
+   "name": "Trapezius",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      305,
+      265
+     ],
+     [
+      303,
+      274
+     ],
+     [
+      296,
+      280
+     ],
+     [
+      288,
+      282
+     ],
+     [
+      280,
+      280
+     ],
+     [
+      273,
+      274
+     ],
+     [
+      271,
+      265
+     ],
+     [
+      273,
+      256
+     ],
+     [
+      280,
+      250
+     ],
+     [
+      288,
+      248
+     ],
+     [
+      296,
+      250
+     ],
+     [
+      303,
+      256
+     ]
+    ]
+   ],
+   "anchor": [
+    288,
+    265
+   ],
+   "label": [
+    40,
+    266
+   ],
+   "facts": []
+  },
+  {
+   "id": "latissimus-dorsi",
+   "name": "Latissimus dorsi",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      92,
+      424
+     ],
+     [
+      90,
+      432
+     ],
+     [
+      84,
+      439
+     ],
+     [
+      75,
+      441
+     ],
+     [
+      66,
+      439
+     ],
+     [
+      60,
+      432
+     ],
+     [
+      58,
+      424
+     ],
+     [
+      60,
+      416
+     ],
+     [
+      66,
+      409
+     ],
+     [
+      75,
+      407
+     ],
+     [
+      83,
+      409
+     ],
+     [
+      90,
+      416
+     ]
+    ]
+   ],
+   "anchor": [
+    75,
+    424
+   ],
+   "label": [
+    70,
+    423
+   ],
+   "facts": []
+  }
+ ]
+}

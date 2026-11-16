@@ -1,0 +1,289 @@
+{
+ "id": "ht-18",
+ "title": "Heart valves",
+ "course": "BIO 004",
+ "group": "Heart, classroom model",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/ht-18.jpg",
+   "width": 1500,
+   "height": 986
+  }
+ ],
+ "structures": [
+  {
+   "id": "pulmonary-semilunar-valve-pulmonic-valve",
+   "name": "Pulmonary semilunar valve (pulmonic valve)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      578,
+      264
+     ],
+     [
+      574,
+      278
+     ],
+     [
+      564,
+      287
+     ],
+     [
+      551,
+      291
+     ],
+     [
+      538,
+      287
+     ],
+     [
+      528,
+      278
+     ],
+     [
+      524,
+      264
+     ],
+     [
+      528,
+      250
+     ],
+     [
+      538,
+      241
+     ],
+     [
+      551,
+      237
+     ],
+     [
+      564,
+      241
+     ],
+     [
+      574,
+      250
+     ]
+    ]
+   ],
+   "anchor": [
+    551,
+    264
+   ],
+   "label": [
+    460,
+    156
+   ],
+   "facts": []
+  },
+  {
+   "id": "tricuspid-valve",
+   "name": "Tricuspid valve",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      473,
+      536
+     ],
+     [
+      469,
+      550
+     ],
+     [
+      460,
+      559
+     ],
+     [
+      446,
+      563
+     ],
+     [
+      432,
+      559
+     ],
+     [
+      423,
+      550
+     ],
+     [
+      419,
+      536
+     ],
+     [
+      423,
+      522
+     ],
+     [
+      432,
+      513
+     ],
+     [
+      446,
+      509
+     ],
+     [
+      460,
+      513
+     ],
+     [
+      469,
+      522
+     ]
+    ]
+   ],
+   "anchor": [
+    446,
+    536
+   ],
+   "label": [
+    303,
+    539
+   ],
+   "facts": []
+  },
+  {
+   "id": "aortic-semilunar-valve-aortic-valve",
+   "name": "Aortic semilunar valve (aortic valve)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1033,
+      543
+     ],
+     [
+      1029,
+      556
+     ],
+     [
+      1020,
+      566
+     ],
+     [
+      1006,
+      570
+     ],
+     [
+      992,
+      566
+     ],
+     [
+      983,
+      556
+     ],
+     [
+      979,
+      543
+     ],
+     [
+      983,
+      530
+     ],
+     [
+      992,
+      520
+     ],
+     [
+      1006,
+      516
+     ],
+     [
+      1020,
+      520
+     ],
+     [
+      1029,
+      530
+     ]
+    ]
+   ],
+   "anchor": [
+    1006,
+    543
+   ],
+   "label": [
+    1089,
+    561
+   ],
+   "facts": []
+  },
+  {
+   "id": "bicuspid-valve-mitral-valve",
+   "name": "Bicuspid valve (mitral valve)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      971,
+      746
+     ],
+     [
+      967,
+      760
+     ],
+     [
+      958,
+      769
+     ],
+     [
+      944,
+      773
+     ],
+     [
+      930,
+      769
+     ],
+     [
+      921,
+      760
+     ],
+     [
+      917,
+      746
+     ],
+     [
+      921,
+      732
+     ],
+     [
+      930,
+      723
+     ],
+     [
+      944,
+      719
+     ],
+     [
+      958,
+      723
+     ],
+     [
+      967,
+      732
+     ]
+    ]
+   ],
+   "anchor": [
+    944,
+    746
+   ],
+   "label": [
+    1004,
+    717
+   ],
+   "facts": []
+  }
+ ]
+}

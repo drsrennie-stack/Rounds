@@ -1,0 +1,153 @@
+{
+ "id": "up-73",
+ "title": "Arm, anterior, biceps cut (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-73.jpg",
+   "width": 525,
+   "height": 757
+  }
+ ],
+ "structures": [
+  {
+   "id": "biceps-brachii-cut-tendons",
+   "name": "Biceps brachii (cut tendons)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      465,
+      119
+     ],
+     [
+      463,
+      127
+     ],
+     [
+      457,
+      133
+     ],
+     [
+      449,
+      135
+     ],
+     [
+      441,
+      133
+     ],
+     [
+      435,
+      127
+     ],
+     [
+      433,
+      119
+     ],
+     [
+      435,
+      111
+     ],
+     [
+      441,
+      105
+     ],
+     [
+      449,
+      103
+     ],
+     [
+      457,
+      105
+     ],
+     [
+      463,
+      111
+     ]
+    ]
+   ],
+   "anchor": [
+    449,
+    119
+   ],
+   "label": [
+    454,
+    120
+   ],
+   "facts": []
+  },
+  {
+   "id": "brachialis",
+   "name": "Brachialis",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      352,
+      383
+     ],
+     [
+      350,
+      391
+     ],
+     [
+      344,
+      397
+     ],
+     [
+      336,
+      399
+     ],
+     [
+      328,
+      397
+     ],
+     [
+      322,
+      391
+     ],
+     [
+      320,
+      383
+     ],
+     [
+      322,
+      375
+     ],
+     [
+      328,
+      369
+     ],
+     [
+      336,
+      367
+     ],
+     [
+      344,
+      369
+     ],
+     [
+      350,
+      375
+     ]
+    ]
+   ],
+   "anchor": [
+    336,
+    383
+   ],
+   "label": [
+    453,
+    285
+   ],
+   "facts": []
+  }
+ ]
+}

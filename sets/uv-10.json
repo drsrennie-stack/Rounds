@@ -1,0 +1,85 @@
+{
+ "id": "uv-10",
+ "title": "Shoulder and arm, posterior",
+ "course": "BIO 004",
+ "group": "Upper limb vessels and nerves, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/uv-10.jpg",
+   "width": 949,
+   "height": 1100
+  }
+ ],
+ "structures": [
+  {
+   "id": "radial-nerve",
+   "name": "Radial nerve",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      650,
+      400
+     ],
+     [
+      647,
+      413
+     ],
+     [
+      637,
+      423
+     ],
+     [
+      624,
+      426
+     ],
+     [
+      611,
+      423
+     ],
+     [
+      601,
+      413
+     ],
+     [
+      598,
+      400
+     ],
+     [
+      601,
+      387
+     ],
+     [
+      611,
+      377
+     ],
+     [
+      624,
+      374
+     ],
+     [
+      637,
+      377
+     ],
+     [
+      647,
+      387
+     ]
+    ]
+   ],
+   "anchor": [
+    624,
+    400
+   ],
+   "label": [
+    624,
+    401
+   ],
+   "facts": []
+  }
+ ]
+}

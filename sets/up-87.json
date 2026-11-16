@@ -1,0 +1,153 @@
+{
+ "id": "up-87",
+ "title": "Hand, anterior (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-87.jpg",
+   "width": 453,
+   "height": 752
+  }
+ ],
+ "structures": [
+  {
+   "id": "hypothenar-muscles",
+   "name": "Hypothenar muscles",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      152,
+      398
+     ],
+     [
+      150,
+      406
+     ],
+     [
+      144,
+      412
+     ],
+     [
+      136,
+      414
+     ],
+     [
+      128,
+      412
+     ],
+     [
+      122,
+      406
+     ],
+     [
+      120,
+      398
+     ],
+     [
+      122,
+      390
+     ],
+     [
+      128,
+      384
+     ],
+     [
+      136,
+      382
+     ],
+     [
+      144,
+      384
+     ],
+     [
+      150,
+      390
+     ]
+    ]
+   ],
+   "anchor": [
+    136,
+    398
+   ],
+   "label": [
+    40,
+    374
+   ],
+   "facts": []
+  },
+  {
+   "id": "thenar-muscles",
+   "name": "Thenar muscles",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      423,
+      371
+     ],
+     [
+      421,
+      379
+     ],
+     [
+      415,
+      385
+     ],
+     [
+      407,
+      387
+     ],
+     [
+      399,
+      385
+     ],
+     [
+      393,
+      379
+     ],
+     [
+      391,
+      371
+     ],
+     [
+      393,
+      363
+     ],
+     [
+      399,
+      357
+     ],
+     [
+      407,
+      355
+     ],
+     [
+      415,
+      357
+     ],
+     [
+      421,
+      363
+     ]
+    ]
+   ],
+   "anchor": [
+    407,
+    371
+   ],
+   "label": [
+    413,
+    372
+   ],
+   "facts": []
+  }
+ ]
+}

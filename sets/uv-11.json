@@ -1,0 +1,153 @@
+{
+ "id": "uv-11",
+ "title": "Forearm, anterior",
+ "course": "BIO 004",
+ "group": "Upper limb vessels and nerves, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/uv-11.jpg",
+   "width": 749,
+   "height": 1100
+  }
+ ],
+ "structures": [
+  {
+   "id": "ulnar-artery",
+   "name": "Ulnar artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      540,
+      293
+     ],
+     [
+      537,
+      303
+     ],
+     [
+      530,
+      310
+     ],
+     [
+      520,
+      313
+     ],
+     [
+      510,
+      310
+     ],
+     [
+      503,
+      303
+     ],
+     [
+      500,
+      293
+     ],
+     [
+      503,
+      283
+     ],
+     [
+      510,
+      276
+     ],
+     [
+      520,
+      273
+     ],
+     [
+      530,
+      276
+     ],
+     [
+      537,
+      283
+     ]
+    ]
+   ],
+   "anchor": [
+    520,
+    293
+   ],
+   "label": [
+    346,
+    295
+   ],
+   "facts": []
+  },
+  {
+   "id": "radial-artery",
+   "name": "Radial artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      559,
+      469
+     ],
+     [
+      556,
+      479
+     ],
+     [
+      549,
+      486
+     ],
+     [
+      539,
+      489
+     ],
+     [
+      529,
+      486
+     ],
+     [
+      522,
+      479
+     ],
+     [
+      519,
+      469
+     ],
+     [
+      522,
+      459
+     ],
+     [
+      529,
+      452
+     ],
+     [
+      539,
+      449
+     ],
+     [
+      549,
+      452
+     ],
+     [
+      556,
+      459
+     ]
+    ]
+   ],
+   "anchor": [
+    539,
+    469
+   ],
+   "label": [
+    346,
+    472
+   ],
+   "facts": []
+  }
+ ]
+}

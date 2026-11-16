@@ -1,0 +1,153 @@
+{
+ "id": "bk-34",
+ "title": "Thoracic cavity, anterior: diaphragm (cadaver)",
+ "course": "BIO 004",
+ "group": "Back and thorax muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/bk-34.jpg",
+   "width": 1128,
+   "height": 692
+  }
+ ],
+ "structures": [
+  {
+   "id": "innermost-intercostals",
+   "name": "Innermost intercostals",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      265,
+      648
+     ],
+     [
+      262,
+      658
+     ],
+     [
+      256,
+      664
+     ],
+     [
+      246,
+      667
+     ],
+     [
+      236,
+      664
+     ],
+     [
+      230,
+      658
+     ],
+     [
+      227,
+      648
+     ],
+     [
+      230,
+      638
+     ],
+     [
+      236,
+      632
+     ],
+     [
+      246,
+      629
+     ],
+     [
+      256,
+      632
+     ],
+     [
+      262,
+      638
+     ]
+    ]
+   ],
+   "anchor": [
+    246,
+    648
+   ],
+   "label": [
+    247,
+    652
+   ],
+   "facts": []
+  },
+  {
+   "id": "diaphragm",
+   "name": "Diaphragm",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      631,
+      657
+     ],
+     [
+      628,
+      666
+     ],
+     [
+      622,
+      673
+     ],
+     [
+      612,
+      676
+     ],
+     [
+      602,
+      673
+     ],
+     [
+      596,
+      666
+     ],
+     [
+      593,
+      657
+     ],
+     [
+      596,
+      648
+     ],
+     [
+      602,
+      641
+     ],
+     [
+      612,
+      638
+     ],
+     [
+      622,
+      641
+     ],
+     [
+      628,
+      648
+     ]
+    ]
+   ],
+   "anchor": [
+    612,
+    657
+   ],
+   "label": [
+    596,
+    652
+   ],
+   "facts": []
+  }
+ ]
+}

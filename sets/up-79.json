@@ -1,0 +1,85 @@
+{
+ "id": "up-79",
+ "title": "Forearm, anterior (cadaver)",
+ "course": "BIO 004",
+ "group": "Upper limb muscles, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/up-79.jpg",
+   "width": 380,
+   "height": 785
+  }
+ ],
+ "structures": [
+  {
+   "id": "flexor-digitorum-superficialis",
+   "name": "Flexor digitorum superficialis",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      243,
+      381
+     ],
+     [
+      241,
+      389
+     ],
+     [
+      235,
+      395
+     ],
+     [
+      227,
+      397
+     ],
+     [
+      219,
+      395
+     ],
+     [
+      213,
+      389
+     ],
+     [
+      211,
+      381
+     ],
+     [
+      213,
+      373
+     ],
+     [
+      219,
+      367
+     ],
+     [
+      227,
+      365
+     ],
+     [
+      235,
+      367
+     ],
+     [
+      241,
+      373
+     ]
+    ]
+   ],
+   "anchor": [
+    227,
+    381
+   ],
+   "label": [
+    40,
+    308
+   ],
+   "facts": []
+  }
+ ]
+}

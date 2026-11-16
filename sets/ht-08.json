@@ -1,0 +1,153 @@
+{
+ "id": "ht-08",
+ "title": "Heart, back view",
+ "course": "BIO 004",
+ "group": "Heart, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/ht-08.jpg",
+   "width": 1500,
+   "height": 805
+  }
+ ],
+ "structures": [
+  {
+   "id": "coronary-sulcus-coronary-sinus",
+   "name": "Coronary sulcus / coronary sinus",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      588,
+      133
+     ],
+     [
+      585,
+      144
+     ],
+     [
+      577,
+      152
+     ],
+     [
+      566,
+      155
+     ],
+     [
+      555,
+      152
+     ],
+     [
+      547,
+      144
+     ],
+     [
+      544,
+      133
+     ],
+     [
+      547,
+      122
+     ],
+     [
+      555,
+      114
+     ],
+     [
+      566,
+      111
+     ],
+     [
+      577,
+      114
+     ],
+     [
+      585,
+      122
+     ]
+    ]
+   ],
+   "anchor": [
+    566,
+    133
+   ],
+   "label": [
+    608,
+    94
+   ],
+   "facts": []
+  },
+  {
+   "id": "inferior-vena-cava-opening",
+   "name": "Inferior vena cava (opening)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      380,
+      597
+     ],
+     [
+      377,
+      608
+     ],
+     [
+      369,
+      616
+     ],
+     [
+      358,
+      619
+     ],
+     [
+      347,
+      616
+     ],
+     [
+      339,
+      608
+     ],
+     [
+      336,
+      597
+     ],
+     [
+      339,
+      586
+     ],
+     [
+      347,
+      578
+     ],
+     [
+      358,
+      575
+     ],
+     [
+      369,
+      578
+     ],
+     [
+      377,
+      586
+     ]
+    ]
+   ],
+   "anchor": [
+    358,
+    597
+   ],
+   "label": [
+    404,
+    658
+   ],
+   "facts": []
+  }
+ ]
+}

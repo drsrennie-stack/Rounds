@@ -1,0 +1,153 @@
+{
+ "id": "uv-09",
+ "title": "Axillary artery, anterior",
+ "course": "BIO 004",
+ "group": "Upper limb vessels and nerves, cadaver",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/uv-09.jpg",
+   "width": 2107,
+   "height": 1100
+  }
+ ],
+ "structures": [
+  {
+   "id": "axillary-artery",
+   "name": "Axillary artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1003,
+      364
+     ],
+     [
+      999,
+      379
+     ],
+     [
+      988,
+      390
+     ],
+     [
+      973,
+      394
+     ],
+     [
+      958,
+      390
+     ],
+     [
+      947,
+      379
+     ],
+     [
+      943,
+      364
+     ],
+     [
+      947,
+      349
+     ],
+     [
+      958,
+      338
+     ],
+     [
+      973,
+      334
+     ],
+     [
+      988,
+      338
+     ],
+     [
+      999,
+      349
+     ]
+    ]
+   ],
+   "anchor": [
+    973,
+    364
+   ],
+   "label": [
+    386,
+    367
+   ],
+   "facts": []
+  },
+  {
+   "id": "brachial-artery",
+   "name": "Brachial artery",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1751,
+      686
+     ],
+     [
+      1747,
+      701
+     ],
+     [
+      1736,
+      712
+     ],
+     [
+      1721,
+      716
+     ],
+     [
+      1706,
+      712
+     ],
+     [
+      1695,
+      701
+     ],
+     [
+      1691,
+      686
+     ],
+     [
+      1695,
+      671
+     ],
+     [
+      1706,
+      660
+     ],
+     [
+      1721,
+      656
+     ],
+     [
+      1736,
+      660
+     ],
+     [
+      1747,
+      671
+     ]
+    ]
+   ],
+   "anchor": [
+    1721,
+    686
+   ],
+   "label": [
+    1721,
+    688
+   ],
+   "facts": []
+  }
+ ]
+}
