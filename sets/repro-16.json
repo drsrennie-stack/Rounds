@@ -1,0 +1,160 @@
+{
+ "id": "repro-16",
+ "title": "Female pelvis, cadaver",
+ "course": "BIO 004",
+ "group": "Female reproductive",
+ "frames": [
+  {
+   "id": "v1",
+   "label": "View 1",
+   "image": "images/atlas/repro-16.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v2",
+   "label": "View 2",
+   "image": "images/atlas/repro-17.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "structures": [
+  {
+   "id": "ovarian-ligament",
+   "name": "Ovarian ligament",
+   "aliases": [],
+   "frame": "v1",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      858,
+      294
+     ],
+     [
+      855,
+      304
+     ],
+     [
+      848,
+      311
+     ],
+     [
+      838,
+      314
+     ],
+     [
+      828,
+      311
+     ],
+     [
+      821,
+      304
+     ],
+     [
+      818,
+      294
+     ],
+     [
+      821,
+      284
+     ],
+     [
+      828,
+      277
+     ],
+     [
+      838,
+      274
+     ],
+     [
+      848,
+      277
+     ],
+     [
+      855,
+      284
+     ]
+    ]
+   ],
+   "anchor": [
+    838,
+    294
+   ],
+   "label": [
+    228,
+    130
+   ],
+   "facts": []
+  },
+  {
+   "id": "round-ligament-of-the-uterus",
+   "name": "Round ligament of the uterus",
+   "aliases": [],
+   "frame": "v2",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      761,
+      331
+     ],
+     [
+      758,
+      341
+     ],
+     [
+      751,
+      348
+     ],
+     [
+      741,
+      351
+     ],
+     [
+      731,
+      348
+     ],
+     [
+      724,
+      341
+     ],
+     [
+      721,
+      331
+     ],
+     [
+      724,
+      321
+     ],
+     [
+      731,
+      314
+     ],
+     [
+      741,
+      311
+     ],
+     [
+      751,
+      314
+     ],
+     [
+      758,
+      321
+     ]
+    ]
+   ],
+   "anchor": [
+    741,
+    331
+   ],
+   "label": [
+    228,
+    500
+   ],
+   "facts": []
+  }
+ ]
+}

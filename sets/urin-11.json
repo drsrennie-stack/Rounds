@@ -1,0 +1,153 @@
+{
+ "id": "urin-11",
+ "title": "Inside the urinary bladder (cadaver)",
+ "course": "BIO 004",
+ "group": "Urinary",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/urin-11.jpg",
+   "width": 1387,
+   "height": 897
+  }
+ ],
+ "structures": [
+  {
+   "id": "ureteral-openings",
+   "name": "Ureteral openings",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      440,
+      526
+     ],
+     [
+      437,
+      538
+     ],
+     [
+      428,
+      548
+     ],
+     [
+      415,
+      551
+     ],
+     [
+      402,
+      548
+     ],
+     [
+      393,
+      538
+     ],
+     [
+      390,
+      526
+     ],
+     [
+      393,
+      514
+     ],
+     [
+      402,
+      504
+     ],
+     [
+      415,
+      501
+     ],
+     [
+      428,
+      504
+     ],
+     [
+      437,
+      514
+     ]
+    ]
+   ],
+   "anchor": [
+    415,
+    526
+   ],
+   "label": [
+    866,
+    217
+   ],
+   "facts": []
+  },
+  {
+   "id": "internal-urethral-orifice",
+   "name": "Internal urethral orifice",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      887,
+      681
+     ],
+     [
+      884,
+      694
+     ],
+     [
+      874,
+      703
+     ],
+     [
+      862,
+      706
+     ],
+     [
+      850,
+      703
+     ],
+     [
+      840,
+      694
+     ],
+     [
+      837,
+      681
+     ],
+     [
+      840,
+      668
+     ],
+     [
+      850,
+      659
+     ],
+     [
+      862,
+      656
+     ],
+     [
+      874,
+      659
+     ],
+     [
+      884,
+      668
+     ]
+    ]
+   ],
+   "anchor": [
+    862,
+    681
+   ],
+   "label": [
+    866,
+    680
+   ],
+   "facts": []
+  }
+ ]
+}

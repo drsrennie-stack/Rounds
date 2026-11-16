@@ -1,0 +1,153 @@
+{
+ "id": "cord-01",
+ "title": "Spinal cord enlargements, posterior view (cadaver)",
+ "course": "BIO 004",
+ "group": "Spinal cord",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/cord-01.jpg",
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "structures": [
+  {
+   "id": "cervical-enlargement",
+   "name": "Cervical enlargement",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      902,
+      240
+     ],
+     [
+      898,
+      255
+     ],
+     [
+      887,
+      266
+     ],
+     [
+      872,
+      270
+     ],
+     [
+      857,
+      266
+     ],
+     [
+      846,
+      255
+     ],
+     [
+      842,
+      240
+     ],
+     [
+      846,
+      225
+     ],
+     [
+      857,
+      214
+     ],
+     [
+      872,
+      210
+     ],
+     [
+      887,
+      214
+     ],
+     [
+      898,
+      225
+     ]
+    ]
+   ],
+   "anchor": [
+    872,
+    240
+   ],
+   "label": [
+    920,
+    171
+   ],
+   "facts": []
+  },
+  {
+   "id": "lumbar-enlargement",
+   "name": "Lumbar enlargement",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1037,
+      720
+     ],
+     [
+      1033,
+      735
+     ],
+     [
+      1022,
+      746
+     ],
+     [
+      1007,
+      750
+     ],
+     [
+      992,
+      746
+     ],
+     [
+      981,
+      735
+     ],
+     [
+      977,
+      720
+     ],
+     [
+      981,
+      705
+     ],
+     [
+      992,
+      694
+     ],
+     [
+      1007,
+      690
+     ],
+     [
+      1022,
+      694
+     ],
+     [
+      1033,
+      705
+     ]
+    ]
+   ],
+   "anchor": [
+    1007,
+    720
+   ],
+   "label": [
+    1077,
+    809
+   ],
+   "facts": []
+  }
+ ]
+}

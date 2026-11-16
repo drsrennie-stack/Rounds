@@ -1,0 +1,385 @@
+{
+ "id": "repro-20",
+ "title": "Spermatic cord and inguinal region, cadaver",
+ "course": "BIO 004",
+ "group": "Male reproductive",
+ "frames": [
+  {
+   "id": "v1",
+   "label": "View 1",
+   "image": "images/atlas/repro-20.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v2",
+   "label": "View 2",
+   "image": "images/atlas/repro-21.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v3",
+   "label": "View 3",
+   "image": "images/atlas/repro-22.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v4",
+   "label": "View 4",
+   "image": "images/atlas/repro-23.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v5",
+   "label": "View 5",
+   "image": "images/atlas/repro-24.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "structures": [
+  {
+   "id": "spermatic-cord",
+   "name": "Spermatic cord",
+   "aliases": [],
+   "frame": "v1",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      841,
+      173
+     ],
+     [
+      838,
+      183
+     ],
+     [
+      831,
+      190
+     ],
+     [
+      821,
+      193
+     ],
+     [
+      811,
+      190
+     ],
+     [
+      804,
+      183
+     ],
+     [
+      801,
+      173
+     ],
+     [
+      804,
+      163
+     ],
+     [
+      811,
+      156
+     ],
+     [
+      821,
+      153
+     ],
+     [
+      831,
+      156
+     ],
+     [
+      838,
+      163
+     ]
+    ]
+   ],
+   "anchor": [
+    821,
+    173
+   ],
+   "label": [
+    848,
+    50
+   ],
+   "facts": []
+  },
+  {
+   "id": "inguinal-canal",
+   "name": "Inguinal canal",
+   "aliases": [],
+   "frame": "v2",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      768,
+      605
+     ],
+     [
+      765,
+      615
+     ],
+     [
+      758,
+      622
+     ],
+     [
+      748,
+      625
+     ],
+     [
+      738,
+      622
+     ],
+     [
+      731,
+      615
+     ],
+     [
+      728,
+      605
+     ],
+     [
+      731,
+      595
+     ],
+     [
+      738,
+      588
+     ],
+     [
+      748,
+      585
+     ],
+     [
+      758,
+      588
+     ],
+     [
+      765,
+      595
+     ]
+    ]
+   ],
+   "anchor": [
+    748,
+    605
+   ],
+   "label": [
+    822,
+    654
+   ],
+   "facts": []
+  },
+  {
+   "id": "ductus-vas-deferens",
+   "name": "Ductus (vas) deferens",
+   "aliases": [],
+   "frame": "v3",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1166,
+      95
+     ],
+     [
+      1163,
+      105
+     ],
+     [
+      1156,
+      112
+     ],
+     [
+      1146,
+      115
+     ],
+     [
+      1136,
+      112
+     ],
+     [
+      1129,
+      105
+     ],
+     [
+      1126,
+      95
+     ],
+     [
+      1129,
+      85
+     ],
+     [
+      1136,
+      78
+     ],
+     [
+      1146,
+      75
+     ],
+     [
+      1156,
+      78
+     ],
+     [
+      1163,
+      85
+     ]
+    ]
+   ],
+   "anchor": [
+    1146,
+    95
+   ],
+   "label": [
+    1084,
+    164
+   ],
+   "facts": []
+  },
+  {
+   "id": "testicular-artery",
+   "name": "Testicular artery",
+   "aliases": [],
+   "frame": "v4",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1093,
+      144
+     ],
+     [
+      1090,
+      154
+     ],
+     [
+      1083,
+      161
+     ],
+     [
+      1073,
+      164
+     ],
+     [
+      1063,
+      161
+     ],
+     [
+      1056,
+      154
+     ],
+     [
+      1053,
+      144
+     ],
+     [
+      1056,
+      134
+     ],
+     [
+      1063,
+      127
+     ],
+     [
+      1073,
+      124
+     ],
+     [
+      1083,
+      127
+     ],
+     [
+      1090,
+      134
+     ]
+    ]
+   ],
+   "anchor": [
+    1073,
+    144
+   ],
+   "label": [
+    1127,
+    244
+   ],
+   "facts": []
+  },
+  {
+   "id": "pampiniform-plexus",
+   "name": "Pampiniform plexus",
+   "aliases": [],
+   "frame": "v5",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1011,
+      302
+     ],
+     [
+      1008,
+      312
+     ],
+     [
+      1001,
+      319
+     ],
+     [
+      991,
+      322
+     ],
+     [
+      981,
+      319
+     ],
+     [
+      974,
+      312
+     ],
+     [
+      971,
+      302
+     ],
+     [
+      974,
+      292
+     ],
+     [
+      981,
+      285
+     ],
+     [
+      991,
+      282
+     ],
+     [
+      1001,
+      285
+     ],
+     [
+      1008,
+      292
+     ]
+    ]
+   ],
+   "anchor": [
+    991,
+    302
+   ],
+   "label": [
+    1127,
+    324
+   ],
+   "facts": []
+  }
+ ]
+}

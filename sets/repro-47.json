@@ -1,0 +1,153 @@
+{
+ "id": "repro-47",
+ "title": "Male hemipelvis, medial (cadaver)",
+ "course": "BIO 004",
+ "group": "Male reproductive",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/repro-47.jpg",
+   "width": 1348,
+   "height": 889
+  }
+ ],
+ "structures": [
+  {
+   "id": "seminal-vesicle",
+   "name": "Seminal vesicle",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      669,
+      479
+     ],
+     [
+      666,
+      491
+     ],
+     [
+      657,
+      500
+     ],
+     [
+      645,
+      503
+     ],
+     [
+      633,
+      500
+     ],
+     [
+      624,
+      491
+     ],
+     [
+      621,
+      479
+     ],
+     [
+      624,
+      467
+     ],
+     [
+      633,
+      458
+     ],
+     [
+      645,
+      455
+     ],
+     [
+      657,
+      458
+     ],
+     [
+      666,
+      467
+     ]
+    ]
+   ],
+   "anchor": [
+    645,
+    479
+   ],
+   "label": [
+    351,
+    396
+   ],
+   "facts": []
+  },
+  {
+   "id": "prostate-gland",
+   "name": "Prostate gland",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      716,
+      612
+     ],
+     [
+      713,
+      624
+     ],
+     [
+      704,
+      633
+     ],
+     [
+      692,
+      636
+     ],
+     [
+      680,
+      633
+     ],
+     [
+      671,
+      624
+     ],
+     [
+      668,
+      612
+     ],
+     [
+      671,
+      600
+     ],
+     [
+      680,
+      591
+     ],
+     [
+      692,
+      588
+     ],
+     [
+      704,
+      591
+     ],
+     [
+      713,
+      600
+     ]
+    ]
+   ],
+   "anchor": [
+    692,
+    612
+   ],
+   "label": [
+    1014,
+    480
+   ],
+   "facts": []
+  }
+ ]
+}

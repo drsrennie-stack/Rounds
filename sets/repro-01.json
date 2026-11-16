@@ -1,0 +1,242 @@
+{
+ "id": "repro-01",
+ "title": "Female pelvis, cadaver (superior view)",
+ "course": "BIO 004",
+ "group": "Female reproductive",
+ "frames": [
+  {
+   "id": "v1",
+   "label": "View 1",
+   "image": "images/atlas/repro-01.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v2",
+   "label": "View 2",
+   "image": "images/atlas/repro-02.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v3",
+   "label": "View 3",
+   "image": "images/atlas/repro-03.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v4",
+   "label": "View 4",
+   "image": "images/atlas/repro-04.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "structures": [
+  {
+   "id": "ovary",
+   "name": "Ovary",
+   "aliases": [],
+   "frame": "v1",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      992,
+      202
+     ],
+     [
+      989,
+      212
+     ],
+     [
+      982,
+      219
+     ],
+     [
+      972,
+      222
+     ],
+     [
+      962,
+      219
+     ],
+     [
+      955,
+      212
+     ],
+     [
+      952,
+      202
+     ],
+     [
+      955,
+      192
+     ],
+     [
+      962,
+      185
+     ],
+     [
+      972,
+      182
+     ],
+     [
+      982,
+      185
+     ],
+     [
+      989,
+      192
+     ]
+    ]
+   ],
+   "anchor": [
+    972,
+    202
+   ],
+   "label": [
+    893,
+    60
+   ],
+   "facts": []
+  },
+  {
+   "id": "uterus",
+   "name": "Uterus",
+   "aliases": [],
+   "frame": "v2",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      927,
+      480
+     ],
+     [
+      924,
+      490
+     ],
+     [
+      917,
+      497
+     ],
+     [
+      907,
+      500
+     ],
+     [
+      897,
+      497
+     ],
+     [
+      890,
+      490
+     ],
+     [
+      887,
+      480
+     ],
+     [
+      890,
+      470
+     ],
+     [
+      897,
+      463
+     ],
+     [
+      907,
+      460
+     ],
+     [
+      917,
+      463
+     ],
+     [
+      924,
+      470
+     ]
+    ]
+   ],
+   "anchor": [
+    907,
+    480
+   ],
+   "label": [
+    879,
+    462
+   ],
+   "facts": []
+  },
+  {
+   "id": "uterine-tube-oviduct",
+   "name": "Uterine tube (oviduct)",
+   "aliases": [],
+   "frame": "v3",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      404,
+      104
+     ],
+     [
+      401,
+      114
+     ],
+     [
+      394,
+      121
+     ],
+     [
+      384,
+      124
+     ],
+     [
+      374,
+      121
+     ],
+     [
+      367,
+      114
+     ],
+     [
+      364,
+      104
+     ],
+     [
+      367,
+      94
+     ],
+     [
+      374,
+      87
+     ],
+     [
+      384,
+      84
+     ],
+     [
+      394,
+      87
+     ],
+     [
+      401,
+      94
+     ]
+    ]
+   ],
+   "anchor": [
+    384,
+    104
+   ],
+   "label": [
+    258,
+    152
+   ],
+   "facts": []
+  }
+ ]
+}

@@ -1,0 +1,317 @@
+{
+ "id": "repro-07",
+ "title": "Female pelvis, sagittal cadaver",
+ "course": "BIO 004",
+ "group": "Female reproductive",
+ "frames": [
+  {
+   "id": "v1",
+   "label": "View 1",
+   "image": "images/atlas/repro-07.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v2",
+   "label": "View 2",
+   "image": "images/atlas/repro-08.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v3",
+   "label": "View 3",
+   "image": "images/atlas/repro-09.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v4",
+   "label": "View 4",
+   "image": "images/atlas/repro-10.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v5",
+   "label": "View 5",
+   "image": "images/atlas/repro-11.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "structures": [
+  {
+   "id": "uterus",
+   "name": "Uterus",
+   "aliases": [],
+   "frame": "v1",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      760,
+      239
+     ],
+     [
+      757,
+      249
+     ],
+     [
+      750,
+      256
+     ],
+     [
+      740,
+      259
+     ],
+     [
+      730,
+      256
+     ],
+     [
+      723,
+      249
+     ],
+     [
+      720,
+      239
+     ],
+     [
+      723,
+      229
+     ],
+     [
+      730,
+      222
+     ],
+     [
+      740,
+      219
+     ],
+     [
+      750,
+      222
+     ],
+     [
+      757,
+      229
+     ]
+    ]
+   ],
+   "anchor": [
+    740,
+    239
+   ],
+   "label": [
+    421,
+    74
+   ],
+   "facts": []
+  },
+  {
+   "id": "urinary-bladder",
+   "name": "Urinary bladder",
+   "aliases": [],
+   "frame": "v2",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      701,
+      418
+     ],
+     [
+      698,
+      428
+     ],
+     [
+      691,
+      435
+     ],
+     [
+      681,
+      438
+     ],
+     [
+      671,
+      435
+     ],
+     [
+      664,
+      428
+     ],
+     [
+      661,
+      418
+     ],
+     [
+      664,
+      408
+     ],
+     [
+      671,
+      401
+     ],
+     [
+      681,
+      398
+     ],
+     [
+      691,
+      401
+     ],
+     [
+      698,
+      408
+     ]
+    ]
+   ],
+   "anchor": [
+    681,
+    418
+   ],
+   "label": [
+    397,
+    404
+   ],
+   "facts": []
+  },
+  {
+   "id": "vagina",
+   "name": "Vagina",
+   "aliases": [],
+   "frame": "v3",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      779,
+      225
+     ],
+     [
+      776,
+      235
+     ],
+     [
+      769,
+      242
+     ],
+     [
+      759,
+      245
+     ],
+     [
+      749,
+      242
+     ],
+     [
+      742,
+      235
+     ],
+     [
+      739,
+      225
+     ],
+     [
+      742,
+      215
+     ],
+     [
+      749,
+      208
+     ],
+     [
+      759,
+      205
+     ],
+     [
+      769,
+      208
+     ],
+     [
+      776,
+      215
+     ]
+    ]
+   ],
+   "anchor": [
+    759,
+    225
+   ],
+   "label": [
+    441,
+    544
+   ],
+   "facts": []
+  },
+  {
+   "id": "urethra",
+   "name": "Urethra",
+   "aliases": [],
+   "frame": "v4",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      577,
+      374
+     ],
+     [
+      574,
+      384
+     ],
+     [
+      567,
+      391
+     ],
+     [
+      557,
+      394
+     ],
+     [
+      547,
+      391
+     ],
+     [
+      540,
+      384
+     ],
+     [
+      537,
+      374
+     ],
+     [
+      540,
+      364
+     ],
+     [
+      547,
+      357
+     ],
+     [
+      557,
+      354
+     ],
+     [
+      567,
+      357
+     ],
+     [
+      574,
+      364
+     ]
+    ]
+   ],
+   "anchor": [
+    557,
+    374
+   ],
+   "label": [
+    430,
+    474
+   ],
+   "facts": []
+  }
+ ]
+}

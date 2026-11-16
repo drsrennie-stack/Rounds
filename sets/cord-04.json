@@ -1,0 +1,153 @@
+{
+ "id": "cord-04",
+ "title": "Dorsal root and ganglion, posterior view (cadaver)",
+ "course": "BIO 004",
+ "group": "Spinal cord",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/cord-04.jpg",
+   "width": 1100,
+   "height": 898
+  }
+ ],
+ "structures": [
+  {
+   "id": "dorsal-root-ganglion",
+   "name": "Dorsal root ganglion",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      574,
+      146
+     ],
+     [
+      571,
+      158
+     ],
+     [
+      562,
+      168
+     ],
+     [
+      549,
+      171
+     ],
+     [
+      536,
+      168
+     ],
+     [
+      527,
+      158
+     ],
+     [
+      524,
+      146
+     ],
+     [
+      527,
+      134
+     ],
+     [
+      536,
+      124
+     ],
+     [
+      549,
+      121
+     ],
+     [
+      562,
+      124
+     ],
+     [
+      571,
+      134
+     ]
+    ]
+   ],
+   "anchor": [
+    549,
+    146
+   ],
+   "label": [
+    664,
+    232
+   ],
+   "facts": []
+  },
+  {
+   "id": "dorsal-root",
+   "name": "Dorsal root",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      743,
+      306
+     ],
+     [
+      740,
+      318
+     ],
+     [
+      730,
+      328
+     ],
+     [
+      718,
+      331
+     ],
+     [
+      706,
+      328
+     ],
+     [
+      696,
+      318
+     ],
+     [
+      693,
+      306
+     ],
+     [
+      696,
+      294
+     ],
+     [
+      706,
+      284
+     ],
+     [
+      718,
+      281
+     ],
+     [
+      730,
+      284
+     ],
+     [
+      740,
+      294
+     ]
+    ]
+   ],
+   "anchor": [
+    718,
+    306
+   ],
+   "label": [
+    750,
+    270
+   ],
+   "facts": []
+  }
+ ]
+}

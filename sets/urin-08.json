@@ -1,0 +1,85 @@
+{
+ "id": "urin-08",
+ "title": "Layers around the kidney",
+ "course": "BIO 004",
+ "group": "Urinary",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/urin-08.jpg",
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "structures": [
+  {
+   "id": "renal-capsule",
+   "name": "Renal capsule",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      1144,
+      828
+     ],
+     [
+      1140,
+      843
+     ],
+     [
+      1129,
+      854
+     ],
+     [
+      1114,
+      858
+     ],
+     [
+      1099,
+      854
+     ],
+     [
+      1088,
+      843
+     ],
+     [
+      1084,
+      828
+     ],
+     [
+      1088,
+      813
+     ],
+     [
+      1099,
+      802
+     ],
+     [
+      1114,
+      798
+     ],
+     [
+      1129,
+      802
+     ],
+     [
+      1140,
+      813
+     ]
+    ]
+   ],
+   "anchor": [
+    1114,
+    828
+   ],
+   "label": [
+    1080,
+    893
+   ],
+   "facts": []
+  }
+ ]
+}

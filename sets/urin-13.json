@@ -1,0 +1,153 @@
+{
+ "id": "urin-13",
+ "title": "Retroperitoneal space: kidney behind the peritoneum (cadaver)",
+ "course": "BIO 004",
+ "group": "Urinary",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/urin-13.jpg",
+   "width": 1286,
+   "height": 842
+  }
+ ],
+ "structures": [
+  {
+   "id": "kidney",
+   "name": "Kidney",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      360,
+      494
+     ],
+     [
+      357,
+      506
+     ],
+     [
+      348,
+      514
+     ],
+     [
+      337,
+      517
+     ],
+     [
+      326,
+      514
+     ],
+     [
+      317,
+      506
+     ],
+     [
+      314,
+      494
+     ],
+     [
+      317,
+      482
+     ],
+     [
+      326,
+      474
+     ],
+     [
+      337,
+      471
+     ],
+     [
+      348,
+      474
+     ],
+     [
+      357,
+      482
+     ]
+    ]
+   ],
+   "anchor": [
+    337,
+    494
+   ],
+   "label": [
+    823,
+    383
+   ],
+   "facts": []
+  },
+  {
+   "id": "ureter",
+   "name": "Ureter",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      472,
+      620
+     ],
+     [
+      469,
+      632
+     ],
+     [
+      460,
+      640
+     ],
+     [
+      449,
+      643
+     ],
+     [
+      438,
+      640
+     ],
+     [
+      429,
+      632
+     ],
+     [
+      426,
+      620
+     ],
+     [
+      429,
+      608
+     ],
+     [
+      438,
+      600
+     ],
+     [
+      449,
+      597
+     ],
+     [
+      460,
+      600
+     ],
+     [
+      469,
+      608
+     ]
+    ]
+   ],
+   "anchor": [
+    449,
+    620
+   ],
+   "label": [
+    832,
+    556
+   ],
+   "facts": []
+  }
+ ]
+}

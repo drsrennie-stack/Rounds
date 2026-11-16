@@ -1,0 +1,153 @@
+{
+ "id": "brain-14",
+ "title": "Dural folds, cranial floor from above",
+ "course": "BIO 004",
+ "group": "Meninges, ventricles and CSF",
+ "frames": [
+  {
+   "id": "main",
+   "label": "Image",
+   "image": "images/atlas/brain-14.jpg",
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "structures": [
+  {
+   "id": "falx-cerebri-cut",
+   "name": "Falx cerebri (cut)",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      372,
+      830
+     ],
+     [
+      368,
+      845
+     ],
+     [
+      357,
+      856
+     ],
+     [
+      342,
+      860
+     ],
+     [
+      327,
+      856
+     ],
+     [
+      316,
+      845
+     ],
+     [
+      312,
+      830
+     ],
+     [
+      316,
+      815
+     ],
+     [
+      327,
+      804
+     ],
+     [
+      342,
+      800
+     ],
+     [
+      357,
+      804
+     ],
+     [
+      368,
+      815
+     ]
+    ]
+   ],
+   "anchor": [
+    342,
+    830
+   ],
+   "label": [
+    308,
+    917
+   ],
+   "facts": []
+  },
+  {
+   "id": "confluence-of-sinuses",
+   "name": "Confluence of sinuses",
+   "aliases": [],
+   "frame": "main",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      775,
+      992
+     ],
+     [
+      771,
+      1007
+     ],
+     [
+      760,
+      1018
+     ],
+     [
+      745,
+      1022
+     ],
+     [
+      730,
+      1018
+     ],
+     [
+      719,
+      1007
+     ],
+     [
+      715,
+      992
+     ],
+     [
+      719,
+      977
+     ],
+     [
+      730,
+      966
+     ],
+     [
+      745,
+      962
+     ],
+     [
+      760,
+      966
+     ],
+     [
+      771,
+      977
+     ]
+    ]
+   ],
+   "anchor": [
+    745,
+    992
+   ],
+   "label": [
+    1146,
+    995
+   ],
+   "facts": []
+  }
+ ]
+}

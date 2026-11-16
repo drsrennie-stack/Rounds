@@ -1,0 +1,310 @@
+{
+ "id": "repro-12",
+ "title": "Male pelvis, sagittal cadaver",
+ "course": "BIO 004",
+ "group": "Male reproductive",
+ "frames": [
+  {
+   "id": "v1",
+   "label": "View 1",
+   "image": "images/atlas/repro-12.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v2",
+   "label": "View 2",
+   "image": "images/atlas/repro-13.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v3",
+   "label": "View 3",
+   "image": "images/atlas/repro-14.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v4",
+   "label": "View 4",
+   "image": "images/atlas/repro-15.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "structures": [
+  {
+   "id": "prostate-gland",
+   "name": "Prostate gland",
+   "aliases": [],
+   "frame": "v1",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      184,
+      301
+     ],
+     [
+      181,
+      311
+     ],
+     [
+      174,
+      318
+     ],
+     [
+      164,
+      321
+     ],
+     [
+      154,
+      318
+     ],
+     [
+      147,
+      311
+     ],
+     [
+      144,
+      301
+     ],
+     [
+      147,
+      291
+     ],
+     [
+      154,
+      284
+     ],
+     [
+      164,
+      281
+     ],
+     [
+      174,
+      284
+     ],
+     [
+      181,
+      291
+     ]
+    ]
+   ],
+   "anchor": [
+    164,
+    301
+   ],
+   "label": [
+    235,
+    179
+   ],
+   "facts": []
+  },
+  {
+   "id": "membranous-urethra",
+   "name": "Membranous urethra",
+   "aliases": [],
+   "frame": "v2",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      184,
+      301
+     ],
+     [
+      181,
+      311
+     ],
+     [
+      174,
+      318
+     ],
+     [
+      164,
+      321
+     ],
+     [
+      154,
+      318
+     ],
+     [
+      147,
+      311
+     ],
+     [
+      144,
+      301
+     ],
+     [
+      147,
+      291
+     ],
+     [
+      154,
+      284
+     ],
+     [
+      164,
+      281
+     ],
+     [
+      174,
+      284
+     ],
+     [
+      181,
+      291
+     ]
+    ]
+   ],
+   "anchor": [
+    164,
+    301
+   ],
+   "label": [
+    200,
+    450
+   ],
+   "facts": []
+  },
+  {
+   "id": "corpus-cavernosum",
+   "name": "Corpus cavernosum",
+   "aliases": [],
+   "frame": "v3",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      934,
+      263
+     ],
+     [
+      931,
+      273
+     ],
+     [
+      924,
+      280
+     ],
+     [
+      914,
+      283
+     ],
+     [
+      904,
+      280
+     ],
+     [
+      897,
+      273
+     ],
+     [
+      894,
+      263
+     ],
+     [
+      897,
+      253
+     ],
+     [
+      904,
+      246
+     ],
+     [
+      914,
+      243
+     ],
+     [
+      924,
+      246
+     ],
+     [
+      931,
+      253
+     ]
+    ]
+   ],
+   "anchor": [
+    914,
+    263
+   ],
+   "label": [
+    960,
+    82
+   ],
+   "facts": []
+  },
+  {
+   "id": "spongy-penile-urethra",
+   "name": "Spongy (penile) urethra",
+   "aliases": [],
+   "frame": "v4",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      891,
+      456
+     ],
+     [
+      888,
+      466
+     ],
+     [
+      881,
+      473
+     ],
+     [
+      871,
+      476
+     ],
+     [
+      861,
+      473
+     ],
+     [
+      854,
+      466
+     ],
+     [
+      851,
+      456
+     ],
+     [
+      854,
+      446
+     ],
+     [
+      861,
+      439
+     ],
+     [
+      871,
+      436
+     ],
+     [
+      881,
+      439
+     ],
+     [
+      888,
+      446
+     ]
+    ]
+   ],
+   "anchor": [
+    871,
+    456
+   ],
+   "label": [
+    880,
+    488
+   ],
+   "facts": []
+  }
+ ]
+}

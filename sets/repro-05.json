@@ -1,0 +1,160 @@
+{
+ "id": "repro-05",
+ "title": "Male pelvis, cadaver (superior view)",
+ "course": "BIO 004",
+ "group": "Male reproductive",
+ "frames": [
+  {
+   "id": "v1",
+   "label": "View 1",
+   "image": "images/atlas/repro-05.jpg",
+   "width": 1280,
+   "height": 720
+  },
+  {
+   "id": "v2",
+   "label": "View 2",
+   "image": "images/atlas/repro-06.jpg",
+   "width": 1280,
+   "height": 720
+  }
+ ],
+ "structures": [
+  {
+   "id": "ductus-vas-deferens",
+   "name": "Ductus (vas) deferens",
+   "aliases": [],
+   "frame": "v1",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      229,
+      102
+     ],
+     [
+      226,
+      112
+     ],
+     [
+      219,
+      119
+     ],
+     [
+      209,
+      122
+     ],
+     [
+      199,
+      119
+     ],
+     [
+      192,
+      112
+     ],
+     [
+      189,
+      102
+     ],
+     [
+      192,
+      92
+     ],
+     [
+      199,
+      85
+     ],
+     [
+      209,
+      82
+     ],
+     [
+      219,
+      85
+     ],
+     [
+      226,
+      92
+     ]
+    ]
+   ],
+   "anchor": [
+    209,
+    102
+   ],
+   "label": [
+    169,
+    102
+   ],
+   "facts": []
+  },
+  {
+   "id": "seminal-vesicle",
+   "name": "Seminal vesicle",
+   "aliases": [],
+   "frame": "v2",
+   "caption": "",
+   "polygons": [
+    [
+     [
+      779,
+      225
+     ],
+     [
+      776,
+      235
+     ],
+     [
+      769,
+      242
+     ],
+     [
+      759,
+      245
+     ],
+     [
+      749,
+      242
+     ],
+     [
+      742,
+      235
+     ],
+     [
+      739,
+      225
+     ],
+     [
+      742,
+      215
+     ],
+     [
+      749,
+      208
+     ],
+     [
+      759,
+      205
+     ],
+     [
+      769,
+      208
+     ],
+     [
+      776,
+      215
+     ]
+    ]
+   ],
+   "anchor": [
+    759,
+    225
+   ],
+   "label": [
+    169,
+    608
+   ],
+   "facts": []
+  }
+ ]
+}
