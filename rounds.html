@@ -602,7 +602,9 @@ function pts(p){ return p.map(q=>q.join(",")).join(" "); }
 let afterFrameChange = null;
 function setFrame(id, silent){
   frameId=id; const f=frame();
-  img.src=f.image; img.alt=SET.title+", "+f.label+" view";
+  /* Images live in images/atlas. If an upload put them in a top-level atlas folder instead, fall back to that path. */
+  img.onerror=function(){ if(this.src.indexOf("images/atlas/")!==-1 && !this.dataset.retried){ this.dataset.retried="1"; this.src=this.src.replace("images/atlas/","atlas/"); } };
+  img.dataset.retried=""; img.src=f.image; img.alt=SET.title+", "+f.label+" view";
   stage.style.aspectRatio = f.width+" / "+f.height;
   svg.setAttribute("viewBox","0 0 "+f.width+" "+f.height);
   document.querySelectorAll(".ftab").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.id===id)));
